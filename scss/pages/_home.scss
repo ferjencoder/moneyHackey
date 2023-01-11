@@ -1,0 +1,56 @@
+@use '../abstract/variables';
+@use '../custom';
+
+.bg--dark-mode {
+  background-color: #494949;
+}
+
+.movements-container {
+  background-color: white;
+  font-size: 0.75rem;
+}
+
+.movements_table {
+  overflow-y: scroll;
+  height: 33.375rem;
+}
+
+.action--expense {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.action--income {
+  background-image: linear-gradient(to top left, #39b385, #5de17e);
+}
+
+.action--installment {
+  background-image: linear-gradient(to top left, #dc3545, #f75f48);
+}
+
+.stats--possitive {
+  color: #5de17e;
+}
+
+.stats--negative {
+  color: #f75f48;
+}
+
+.table__top {
+  border-top-color: #b9b9b9
+}
+
+.movements__type {
+  position: absolute;
+  height: 100%;
+  width: 1rem;
+  border-radius: 0;
+  border: 0;
+}
+
+.movements__type--withdrawal {
+  background-color: #dc3545;
+}
+
+.movements__type--deposit {
+  background-color: #5de17e;
+}

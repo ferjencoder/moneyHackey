@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/ferjen/image/upload/v1673406076/moneyHackey/img/favicon/mh-logo_e6mppj.svg"
+      type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./script.js"></script>
+    <title>moneyHackey</title>
+  </head>
+  <body class="bg--dark-mode">
+    <header>
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand d-flex" href="./index.html">
+            <img
+              class="navbar__logo"
+              src="https://res.cloudinary.com/ferjen/image/upload/v1673406076/moneyHackey/img/favicon/mh-logo_e6mppj.svg"
+              alt="Money Hackey App Logo" />
+            <h1 class="ms-2 fs-5">moneyHackey</h1>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasDarkNavbar"
+            aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <div class="offcanvas-title" id="offcanvasDarkNavbarLabel">
+                <a class="navbar-brand d-flex" href="./index.html">
+                  <img
+                    class="navbar__logo"
+                    src="https://res.cloudinary.com/ferjen/image/upload/v1673406076/moneyHackey/img/favicon/mh-logo_e6mppj.svg"
+                    alt="Money Hackey App Logo" />
+                  <h1 class="ms-2 fs-5">moneyHackey</h1>
+                </a>
+              </div>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >New Expense</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >New Income</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >My stats</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-5">
+      <section class="container pt-5">
+        <!--* BALANCE ROW -->
+        <div class="row mt-5">
+          <div class="col-md-8 text-white">
+            <h2 class="fs-5">Current balance</h2>
+          </div>
+          <div class="col-12 col-md-4 text-white text-center">
+            <h2 class="fs-2 balance__value">$1.111.111</h2>
+          </div>
+        </div>
+        <div class="row">
+          <!--* MOVEMENTS COL -->
+          <container class="col-md-8 text-white movements-container">
+            <div class="row bg-white movements_table">
+              <table
+                class="table table-hover table-condensed mt-2 text-uppercase">
+                <thead class="position-sticky">
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">
+                      <input
+                        type="text"
+                        class="p-0 m-0 border-0 text-uppercase w-100"
+                        placeholder="Date" />
+                    </th>
+                    <th scope="col">
+                      <input
+                        type="text"
+                        class="p-0 m-0 border-0 text-uppercase w-100"
+                        placeholder="Category" />
+                    </th>
+                    <th scope="col">
+                      <input
+                        type="text"
+                        class="p-0 m-0 border-0 text-uppercase w-100"
+                        placeholder="Place" />
+                    </th>
+                    <th scope="col">
+                      <input
+                        type="text"
+                        class="p-0 m-0 border-0 text-uppercase w-100"
+                        placeholder="Comment" />
+                    </th>
+                    <th scope="col">
+                      <input
+                        type="text"
+                        class="p-0 m-0 border-0 text-uppercase w-100"
+                        placeholder="Money" />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider table__top movements"></tbody>
+              </table>
+            </div>
+            <!--* STATS ROW -->
+            <div class="row bg--dark-mode">
+              <div class="mt-4 d-flex justify-content-evenly w-100 text-center">
+                <h6 class="stats--possitive">in USD: 16.898</h6>
+                <h6 class="stats--possitive">in EUR: 17.898</h6>
+                <h6 class="stats--possitive">in ARS: 17.898</h6>
+                <h6 class="stats--negative">out ARS: 17.898</h6>
+              </div>
+            </div>
+          </container>
+          <!--* ACTION COL -->
+          <div class="col-12 col-md-4 text-white">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item mb-2 action--expense">
+                <form class="mb-1">
+                  <div class="row d-flex flex-nowrap align-items-center mb-2">
+                    <div class="col"><h5>New Expense</h5></div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        name="money"
+                        placeholder="money"
+                        aria-label="input money" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="category"
+                        aria-label="input category" />
+                      <input
+                        class="form-control"
+                        name="date"
+                        type="date"
+                        aria-label="date" />
+                    </div>
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        name="place"
+                        placeholder="place"
+                        aria-label="input place" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        name="comment"
+                        placeholder="comment"
+                        aria-label="input comment" />
+                      <button type="button" class="btn btn-action">
+                        New Expense
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li class="list-group-item mb-2 action--installment">
+                <form action="" class="mb-1">
+                  <div class="row d-flex flex-nowrap align-items-center mb-2">
+                    <div class="col"><h5>New Installment</h5></div>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control"
+                        type="date"
+                        aria-label="date" />
+                    </div>
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <button type="button" class="btn btn-action">
+                        New Installment
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li class="list-group-item action--income">
+                <form action="" class="mb-1">
+                  <div class="row d-flex flex-nowrap align-items-center mb-2">
+                    <div class="col"><h5>New Income</h5></div>
+                    <div class="col"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control"
+                        type="date"
+                        aria-label="date" />
+                    </div>
+                    <div class="col text-white">
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <input
+                        class="form-control mb-2"
+                        type="text"
+                        placeholder="Default input"
+                        aria-label="default input example" />
+                      <button type="button" class="btn btn-action">
+                        New Income
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

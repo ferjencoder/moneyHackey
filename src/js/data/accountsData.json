@@ -1,0 +1,439 @@
+[
+  {
+    "id": 12335468324,
+    "owner": {
+      "name": "Mrs. Jane Smith",
+      "email": "jane.smith@email.com",
+      "phone": "+54123123",
+      "address": "San Martin 100",
+      "user": "janneys",
+      "pin": 1111
+    },
+    "movements": [
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 1,
+        "date": "20/01/23",
+        "money": -20000,
+        "store": "Las Pacas",
+        "payments": 3,
+        "comment": "Comment from the user. Comment from the user.",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "28/12/22",
+        "money": -42000,
+        "store": "La Gran 7",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "22/12/22",
+        "money": 400000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "salary",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 4,
+        "date": "18/12/22",
+        "money": -15000,
+        "store": "Sushi Club",
+        "payments": 3,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      }
+    ],
+    "interestRate": 1.2
+  },
+
+  {
+    "id": 23654488522,
+    "owner": {
+      "name": "Mrs. Nancy Mayers",
+      "email": "nancy.mayers@email.com",
+      "phone": "+5431353123",
+      "address": "Madero 100",
+      "user": "banker18",
+      "pin": 2222
+    },
+    "movements": [
+      {
+        "transaction": 1,
+        "date": "22/12/22",
+        "money": 80000,
+        "store": "Sueldo",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "02/01/23",
+        "money": -2000,
+        "store": "Vercace",
+        "payments": 12,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "21/12/22",
+        "money": 80000,
+        "store": "Alquiler",
+        "payments": 0,
+        "comment": "Comment from the user",
+        "type": "deposit",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 4,
+        "date": "22/12/22",
+        "money": -4000,
+        "store": "North Face",
+        "payments": 6,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 5,
+        "date": "10/12/22",
+        "money": -8000,
+        "store": "Mont Blanc",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      }
+    ],
+    "interestRate": 1.2
+  },
+
+  {
+    "id": 31223545564,
+    "owner": {
+      "name": "Mrs. Jane Austen",
+      "email": "jane.austen@email.com",
+      "phone": "+5488976545",
+      "address": "Roca 100",
+      "user": "tracker83",
+      "pin": 3333
+    },
+    "movements": [
+      {
+        "transaction": 1,
+        "date": "05/01/23",
+        "money": -16000,
+        "store": "Makro",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "01/12/22",
+        "money": -42000,
+        "store": "Volkswagen",
+        "payments": 2,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "24/11/22",
+        "money": -18000,
+        "store": "Ocean Drive",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      }
+    ],
+    "interestRate": 1.2
+  },
+
+  {
+    "id": 48651352221,
+    "owner": {
+      "name": "Mrs. Norah Ephron",
+      "email": "norah.ephron@email.com",
+      "phone": "+548654876",
+      "address": "San Lorenzo 100",
+      "user": "lovelyne",
+      "pin": 4444
+    },
+    "movements": [
+      {
+        "transaction": 1,
+        "date": "05/01/23",
+        "money": -16000,
+        "store": "Makro",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "01/12/22",
+        "money": -42000,
+        "store": "Volkswagen",
+        "payments": 2,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "24/11/22",
+        "money": -18000,
+        "store": "Ocean Drive",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      }
+    ],
+    "interestRate": 1.2
+  },
+
+  {
+    "id": 56321879574,
+    "owner": {
+      "name": "Mrs. Sherrilyn Kenyon",
+      "email": "sherrilyn.kenyon@email.com",
+      "phone": "+543548456",
+      "address": "Urquiza 100",
+      "user": "kentucky",
+      "pin": 5555
+    },
+    "movements": [
+      {
+        "transaction": 1,
+        "date": "02/01/23",
+        "money": -22000,
+        "store": "Apple Store",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 2,
+        "date": "05/12/22",
+        "money": -24000,
+        "store": "Hilton",
+        "payments": 2,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      },
+      {
+        "transaction": 3,
+        "date": "30/11/22",
+        "money": -4500,
+        "store": "La Barraca",
+        "payments": 1,
+        "comment": "Comment from the user",
+        "type": "withdrawal",
+        "category": "restaurant",
+        "currency": "ARS"
+      }
+    ],
+    "interestRate": 1.2
+  }
+]

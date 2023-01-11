@@ -1,0 +1,93 @@
+:root {
+  --bs-blue: #0d7dfd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #e52a72;
+  --bs-red: #dc3545;
+  --bs-orange: #ffb003;
+  --bs-yellow: #ffcb03;
+  --bs-green: #39b385;
+  --bs-teal: #5de17e;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: rgb(108, 117, 125);
+  --bs-gray-dark: rgb(52, 58, 64);
+  --bs-gray-100: rgb(248, 249, 250);
+  --bs-gray-200: rgb(233, 236, 239);
+  --bs-gray-300: rgb(222, 226, 230);
+  --bs-gray-400: rgb(206, 212, 218);
+  --bs-gray-500: rgb(173, 181, 189);
+  --bs-gray-600: rgb(108, 117, 125);
+  --bs-gray-700: rgb(73, 80, 87);
+  --bs-gray-800: rgb(52, 58, 64);
+  --bs-gray-900: rgb(33, 37, 41);
+  --bs-primary: #e52a72;
+  --bs-secondary: #6f42c1;
+  --bs-success: #5de17e;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffb003;
+  --bs-danger: #dc3545;
+  --bs-light: rgb(248, 249, 250);
+  --bs-dark: rgb(33, 37, 41);
+  --bs-ecd-clr-8: rgb(229, 239, 230);
+  --bs-ecd-clr-9: rgb(226, 213, 222);
+  --bs-ecd-clr-10: rgb(230, 227, 222);
+  --bs-primary-rgb: 121, 85, 105;
+  --bs-secondary-rgb: 166, 128, 140;
+  --bs-success-rgb: 229, 239, 230;
+  --bs-info-rgb: 178, 208, 255;
+  --bs-warning-rgb: 254, 234, 200;
+  --bs-danger-rgb: 255, 212, 212;
+  --bs-light-rgb: 248, 249, 250;
+  --bs-dark-rgb: 33, 37, 41;
+  --bs-ecd-clr-8-rgb: 229, 239, 230;
+  --bs-ecd-clr-9-rgb: 226, 213, 222;
+  --bs-ecd-clr-10-rgb: 230, 227, 222;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 0, 0, 0;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #000;
+  --bs-body-bg: #fff;
+}
+
+/* COLORS */
+$blue: #0d7dfd;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e52a72;
+$red: #dc3545;
+$orange: #ffb003;
+$yellow: #ffcb03;
+$green: #39b385;
+$teal: #5de17e;
+$cyan: #0dcaf0;
+
+
+/* BUTTONS */
+$btn-font-size: 0.75rem;
+$btn-box-shadow: none;
+$btn-focus-width: 0;
+$btn-focus-box-shadow: none;
+$btn-disabled-opacity: none;
+$btn-active-box-shadow: 0;
+$btn-border-radius: 0.2rem;
+
+/* CLOSE BUTTON */
+$btn-close-focus-shadow: none;
+
+/* FONTS */
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+/* INPUT */
+$input-font-size: 0.75rem;
+$input-border-radius: 0.2rem;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

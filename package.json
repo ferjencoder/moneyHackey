@@ -1,0 +1,30 @@
+{
+	"name": "money-hackey",
+	"version": "1.0.0",
+	"description": "Money tracker app",
+	"main": "script.js",
+	"scripts": {
+		"sassw": "sass --watch scss:dist/css"
+	},
+	"repository": {
+		"type": "git",
+		"url": "moneyHackey"
+	},
+	"keywords": [
+		"expense",
+		"tracker",
+		"money",
+		"app"
+	],
+	"author": "ferJen",
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.57.1"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^6.2.1",
+		"autoprefixer": "^10.4.13",
+		"bootstrap": "^5.2.3",
+		"postcss-cli": "^10.1.0"
+	}
+}
