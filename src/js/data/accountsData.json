@@ -203,7 +203,7 @@
         "money": 400000,
         "store": "Sueldo",
         "payments": 0,
-        "comment": "Comment from the user",
+        "comment": "Comment from the user. Comment from the user. Comment from the user. Comment from the user. Comment from the user",
         "type": "deposit",
         "category": "salary",
         "currency": "ARS"

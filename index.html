@@ -81,7 +81,7 @@
       </nav>
     </header>
     <main class="mt-5">
-      <section class="container pt-5">
+      <section class="container pt-5 gap-0 column-gap-3">
         <!--* BALANCE ROW -->
         <div class="row mt-5">
           <div class="col-md-8 text-white">
@@ -92,51 +92,186 @@
           </div>
         </div>
         <div class="row">
-          <!--* MOVEMENTS COL -->
-          <container class="col-md-8 text-white movements-container">
-            <div class="row bg-white movements_table">
-              <table
-                class="table table-hover table-condensed mt-2 text-uppercase">
-                <thead class="position-sticky">
-                  <tr>
-                    <th scope="col"></th>
-                    <th scope="col">
-                      <input
-                        type="text"
-                        class="p-0 m-0 border-0 text-uppercase w-100"
-                        placeholder="Date" />
-                    </th>
-                    <th scope="col">
-                      <input
-                        type="text"
-                        class="p-0 m-0 border-0 text-uppercase w-100"
-                        placeholder="Category" />
-                    </th>
-                    <th scope="col">
-                      <input
-                        type="text"
-                        class="p-0 m-0 border-0 text-uppercase w-100"
-                        placeholder="Place" />
-                    </th>
-                    <th scope="col">
-                      <input
-                        type="text"
-                        class="p-0 m-0 border-0 text-uppercase w-100"
-                        placeholder="Comment" />
-                    </th>
-                    <th scope="col">
-                      <input
-                        type="text"
-                        class="p-0 m-0 border-0 text-uppercase w-100"
-                        placeholder="Money" />
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="table-group-divider table__top movements"></tbody>
-              </table>
+          <container class="col text-white movements-container">
+            <div class="row">
+              <!--* MOVEMENTS COL -->
+              <div
+                class="col-md-8 con-lg-8 movements__table--row bg-white p-0 m-0">
+                <table class="table table-condensed table-hover text-uppercase">
+                  <thead class="table__head">
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col" class="m-0 p-0">
+                        <input
+                          type="text"
+                          class="m-0 border-0 text-uppercase input__sort--date"
+                          placeholder="Date" />
+                      </th>
+                      <th scope="col" class="m-0 p-0">
+                        <input
+                          type="text"
+                          class="m-0 border-0 text-uppercase input__sort--category"
+                          placeholder="Category" />
+                      </th>
+                      <th scope="col" class="m-0 p-0">
+                        <input
+                          type="text"
+                          class="m-0 border-0 text-uppercase input__sort--place"
+                          placeholder="Place" />
+                      </th>
+                      <th scope="col" class="m-0 p-0">
+                        <input
+                          type="text"
+                          class="m-0 border-0 text-uppercase input__sort--comment"
+                          placeholder="Comment and notes" />
+                      </th>
+                      <th scope="col" class="m-0 p-0">
+                        <input
+                          type="text"
+                          class="m-0 border-0 text-uppercase input__sort--money"
+                          placeholder="Money" />
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="movements"></tbody>
+                </table>
+              </div>
+              <!--* ACTION COL -->
+              <div
+                class="pt-sm-5 pt-md-0 ps-sm-0 ps-md-2 col-md-4 con-lg-4 text-white p-0 m-0">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item mb-2 action--expense">
+                    <form class="mb-1">
+                      <div
+                        class="row d-flex flex-nowrap align-items-center mb-2">
+                        <div class="col-span-2"><h5>New Expense</h5></div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            name="money"
+                            placeholder="money"
+                            aria-label="input money" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="category"
+                            aria-label="input category" />
+                          <input
+                            class="form-control mb-2"
+                            name="date mb-2"
+                            type="date"
+                            aria-label="date" />
+                        </div>
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            name="place"
+                            placeholder="place"
+                            aria-label="input place" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            name="comment"
+                            placeholder="comment"
+                            aria-label="input comment" />
+                          <button type="button" class="btn btn-action">
+                            New Expense
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                  <li class="list-group-item mb-2 action--installment">
+                    <form action="" class="mb-1">
+                      <div
+                        class="row d-flex flex-nowrap align-items-center mb-2">
+                        <div class="col-span-2"><h5>New Installment</h5></div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="date"
+                            aria-label="date" />
+                        </div>
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <button type="button" class="btn btn-action">
+                            New Installment
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                  <li class="list-group-item action--income">
+                    <form action="" class="mb-1">
+                      <div
+                        class="row d-flex flex-nowrap align-items-center mb-2">
+                        <div class="col-span-2"><h5>New Income</h5></div>
+                      </div>
+                      <div class="row">
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="date"
+                            aria-label="date" />
+                        </div>
+                        <div class="col text-white">
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <input
+                            class="form-control mb-2"
+                            type="text"
+                            placeholder="Default input"
+                            aria-label="default input example" />
+                          <button type="button" class="btn btn-action">
+                            New Income
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </div>
             </div>
             <!--* STATS ROW -->
-            <div class="row bg--dark-mode">
+            <div class="row bg--dark-mode p-0 m-0">
               <div class="mt-4 d-flex justify-content-evenly w-100 text-center">
                 <h6 class="stats--possitive">in USD: 16.898</h6>
                 <h6 class="stats--possitive">in EUR: 17.898</h6>
@@ -145,137 +280,6 @@
               </div>
             </div>
           </container>
-          <!--* ACTION COL -->
-          <div class="col-12 col-md-4 text-white">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item mb-2 action--expense">
-                <form class="mb-1">
-                  <div class="row d-flex flex-nowrap align-items-center mb-2">
-                    <div class="col"><h5>New Expense</h5></div>
-                  </div>
-                  <div class="row">
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        name="money"
-                        placeholder="money"
-                        aria-label="input money" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="category"
-                        aria-label="input category" />
-                      <input
-                        class="form-control"
-                        name="date"
-                        type="date"
-                        aria-label="date" />
-                    </div>
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        name="place"
-                        placeholder="place"
-                        aria-label="input place" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        name="comment"
-                        placeholder="comment"
-                        aria-label="input comment" />
-                      <button type="button" class="btn btn-action">
-                        New Expense
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </li>
-              <li class="list-group-item mb-2 action--installment">
-                <form action="" class="mb-1">
-                  <div class="row d-flex flex-nowrap align-items-center mb-2">
-                    <div class="col"><h5>New Installment</h5></div>
-                    <div class="col"></div>
-                  </div>
-                  <div class="row">
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control"
-                        type="date"
-                        aria-label="date" />
-                    </div>
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <button type="button" class="btn btn-action">
-                        New Installment
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </li>
-              <li class="list-group-item action--income">
-                <form action="" class="mb-1">
-                  <div class="row d-flex flex-nowrap align-items-center mb-2">
-                    <div class="col"><h5>New Income</h5></div>
-                    <div class="col"></div>
-                  </div>
-                  <div class="row">
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control"
-                        type="date"
-                        aria-label="date" />
-                    </div>
-                    <div class="col text-white">
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <input
-                        class="form-control mb-2"
-                        type="text"
-                        placeholder="Default input"
-                        aria-label="default input example" />
-                      <button type="button" class="btn btn-action">
-                        New Income
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
     </main>

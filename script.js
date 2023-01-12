@@ -25,8 +25,8 @@ const displayMovements = (movements) => {
         <td>${movement.date}</td>
         <td>${movement.category}</td>
         <td>${movement.store}</td>
-        <td class="text-truncate">${movement.comment}</td>
-        <td class=" text-end">${precioARS(movement.money)}</td>
+        <td class="movements__td--comment">${movement.comment}</td>
+        <td class=" text-end pe-4">${precioARS(movement.money)}</td>
       </tr>
     `;
     domEl.containerMovements.insertAdjacentHTML('afterbegin', html);

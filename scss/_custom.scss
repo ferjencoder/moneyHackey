@@ -87,7 +87,25 @@ $btn-close-focus-shadow: none;
 $font-family-sans-serif: 'Poppins', sans-serif;
 
 /* INPUT */
-$input-font-size: 0.75rem;
-$input-border-radius: 0.2rem;
+$input-border-color: transparent;
+$input-border-radius: 0;
+$input-border-width: 0;
+$input-box-shadow: none;
+$input-color: black;
+$input-disabled-color: black;
+//$input-focus-bg: transparent;
+$input-focus-border-color: transparent;
+$input-focus-box-shadow: none;
+//$input-focus-color: transparent;
+$input-font-size: 0.9rem;
+$input-placeholder-color: black;
+$input-plaintext-color: black;
+$placeholder-opacity-max: 100%;
+$placeholder-opacity-min: 100%;
+$input-btn-border-width: 0;
+$input-btn-focus-width: 0;
+$input-btn-focus-color-opacity: 100%;
+
+
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

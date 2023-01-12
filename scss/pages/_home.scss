@@ -6,13 +6,186 @@
 }
 
 .movements-container {
-  background-color: white;
   font-size: 0.75rem;
+  height: 35.76rem;
 }
 
 .movements_table {
   overflow-y: scroll;
-  height: 33.375rem;
+}
+
+.movements__table--row {
+  height: 35.76rem;
+  overflow-y: scroll;
+}
+
+.input__sort--date {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  background-color: #b9b9b9;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+.input__sort--category {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  background-color: #b9b9b9;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+.input__sort--place {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  background-color: #b9b9b9;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+th {
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.input__sort--comment {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  background-color: #b9b9b9;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 1rem;
+  }
+
+}
+
+.input__sort--money {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  background-color: #b9b9b9;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 1rem;
+  }
+}
+
+.movements__td--comment {
+  width: 20rem;
+  margin: 0;
+}
+
+
+.input__sort::placeholder {
+  padding: 2rem;
+  color: black;
+  opacity: 100%;
 }
 
 .action--expense {
@@ -37,6 +210,12 @@
 
 .table__top {
   border-top-color: #b9b9b9
+}
+
+.table__head {
+  background-color: #b9b9b9;
+  top: 0;
+  position: sticky;
 }
 
 .movements__type {
