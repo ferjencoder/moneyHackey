@@ -1,4 +1,4 @@
-export const onFormSubmit = (event) => {
+export const onFormSubmit = ({ target }) => {
   event.preventDefault();
   const newMovement = {
     transaction: 1,

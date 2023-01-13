@@ -20,10 +20,39 @@ export const btnSort = document.querySelector('.btn--sort');
 
 export const inputLoginUsername = document.querySelector('.login__input--user');
 export const inputLoginPin = document.querySelector('.login__input--pin');
-export const inputTransferTo = document.querySelector('.form__input--to');
-export const inputTransferAmount = document.querySelector(
-  '.form__input--amount'
+
+export const inputExpenseMoney = document.querySelector(
+  '.expense__input--money'
 );
+export const inputExpenseCategory = document.querySelector(
+  '.expense__input--category'
+);
+export const inputExpenseDate = document.querySelector('.expense__input--date');
+export const inputExpensePlace = document.querySelector(
+  '.expense__input--place'
+);
+export const inputExpenseComment = document.querySelector(
+  '.expense__input--comment'
+);
+export const inputExpensePayments = document.querySelector(
+  '.expense__input--payments'
+);
+export const inputExpenseCurrency = document.querySelector(
+  '.expense__input--currency'
+);
+export const btnExpense = document.querySelector('.btn-expense');
+
+export const inputIncomeMoney = document.querySelector('.income__input--money');
+export const inputIncomeCategory = document.querySelector(
+  '.income__input--category'
+);
+export const inputIncomeDate = document.querySelector('.income__input--date');
+export const inputIncomePlace = document.querySelector('.income__input--place');
+export const inputIncomeComment = document.querySelector(
+  '.income__input--comment'
+);
+export const btnIncome = document.querySelector('.btn-income');
+
 export const inputLoanAmount = document.querySelector(
   '.form__input--loan-amount'
 );

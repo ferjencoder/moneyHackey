@@ -25,6 +25,6 @@ export const userCreate = (inputName) => {
   return userName;
 };
 
-console.log(userCreate(inputName));
+//console.log(userCreate(inputName));
 
 export default precioARS;

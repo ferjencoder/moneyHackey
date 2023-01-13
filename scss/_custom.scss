@@ -69,6 +69,52 @@ $yellow: #ffcb03;
 $green: #39b385;
 $teal: #5de17e;
 $cyan: #0dcaf0;
+$expense: #ffb003;
+$installment: #dc3545;
+$income: #5de17e;
+
+$primary: $blue ;
+$secondary: $pink ;
+$success: $green ;
+$info: $cyan ;
+$warning: $yellow ;
+$danger: $red ;
+$light: #f8f9fa;
+$dark: #212529;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "black": black,
+  "white": white,
+  "gray": #6c757d,
+  "gray-dark": #343a40,
+  "expense": $expense,
+  "installment": $installment,
+  "income": $income,
+);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "expense": $expense,
+  "installment": $installment,
+  "income": $income
+);
 
 
 /* BUTTONS */
@@ -78,7 +124,8 @@ $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 $btn-disabled-opacity: none;
 $btn-active-box-shadow: 0;
-$btn-border-radius: 0.2rem;
+$btn-border-radius: 0;
+$btn-border-width: 0;
 
 /* CLOSE BUTTON */
 $btn-close-focus-shadow: none;
@@ -106,6 +153,9 @@ $input-btn-border-width: 0;
 $input-btn-focus-width: 0;
 $input-btn-focus-color-opacity: 100%;
 
+/* LIST GROUP */
 
+$list-group-border-width: 0;
+$list-group-active-border-color: none;
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
