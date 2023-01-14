@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Money tracker app",
   "scripts": {
-    "sassw": "sass --watch scss:dist/css"
+    "sassw": "sass --watch scss:dist/css",
+    "start": "webpack-dev-server --open --port=8080"
   },
   "repository": {
     "type": "git",

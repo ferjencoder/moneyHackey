@@ -11,35 +11,45 @@ import {
   where,
 } from 'firebase/firestore';
 import * as domEl from '../src/js/helper/domElements';
-import { precioARS } from '../src/js/helper/helperFunctions';
-import {
-  fetchAccount,
-  db,
-  fetchMovements,
-  setNewMovement,
-} from './js/helper/fetchData';
+import { precioARS, createDate } from '../src/js/helper/helperFunctions';
+import { fetchMovements, setNewMovement } from './js/helper/fetchData';
+import { db } from './js/helper/dbConfig';
 //import { setNewMovement } from './js/helper/formFunctions';
 
-const activeAccount = 'PipgqG76If0CiGua1zMF';
-const acccountNumber = 1654981998442;
+const activeAccount = '4UpnfRSWYGsvmmZP21Un';
+const accountNumber = 2654981998442;
+//const activeAccount = 'PipgqG76If0CiGua1zMF';
+//const accountNumber = 1654981998442;
 
 //const accFromFirebase = await fetchAccount(activeAccount);
 const accFromFirebase = await fetchMovements(activeAccount);
 
 const movements = accFromFirebase;
 
-//Destructure movements from account
-//const { movements } = accFromFirebase;
-
-//Display movements from active account
-const displayMovements = (movements) => {
+if (movements.length < 1) {
   domEl.containerMovements.innerHTML = '';
 
-  movements.forEach((movement) => {
-    let mov;
-    movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
+  const html = `
+      <tr class="movement__row">
+        <td class="p-0 m-0 position-relative">
+          <button class="movements__type movements__type"></button>
+        </td>
+        <td colspan="6" >"No expense records yet... start your first one! 😁</td>
+      </tr>
+    `;
+  domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
+} else {
+  //Display movements from active account
+  const displayMovements = (movements) => {
+    console.log(movements);
 
-    const html = `
+    domEl.containerMovements.innerHTML = '';
+
+    movements.forEach((movement) => {
+      let mov;
+      movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
+
+      const html = `
       <tr class="movement__row">
         <td class="p-0 m-0 position-relative">
           <button class="movements__type movements__type--${mov}"></button>
@@ -52,11 +62,11 @@ const displayMovements = (movements) => {
         <td class=" text-end">${movement.currency}</td>
       </tr>
     `;
-    domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
-  });
-};
-displayMovements(movements);
-
+      domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
+    });
+  };
+  displayMovements(movements);
+}
 //Balance Total => sums all movements
 const balanceTotal = (movements) => {
   let sum = 0;
@@ -86,7 +96,7 @@ domEl.btnExpense.addEventListener('click', function (e) {
   let categoryEl = domEl.inputExpenseCategory.value;
   let commentEl = domEl.inputExpenseComment.value;
   let currencyEl = domEl.inputExpenseCurrency.value;
-  let dateEl = domEl.inputExpenseDate.value;
+  let dateEl = createDate(domEl.inputExpenseDate.value);
   let moneyEl = Number(domEl.inputExpenseMoney.value);
   let paymentsEl = domEl.inputExpensePayments.value;
   let placeEl = domEl.inputExpensePlace.value;
@@ -135,7 +145,30 @@ domEl.btnExpense.addEventListener('click', function (e) {
 //  setNewMovement(newMovement);
 //});
 
-export const updateUI = (movements) => {
+export const updateUI = async (movements) => {
+  await fetchMovements(activeAccount);
   displayMovements(movements);
   balanceTotal(movements);
 };
+
+//const createUser = async () => {
+//  const user = {
+//    account: 'account',
+//    accountNumber: 'accountNumber',
+//    active: 'active',
+//    email: 'email',
+//    pin: 'pin',
+//    uid: 'uid',
+//    userName: 'userName',
+//    userlmg: 'userlmg',
+//  };
+//
+//  try {
+//    const userRef = await addDoc(collection(db, 'users'), user);
+//    console.log('Document written with ID: ', userRef.id);
+//  } catch (e) {
+//    console.error('Error adding document: ', e);
+//  }
+//
+//  console.log(user);
+//};

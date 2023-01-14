@@ -1,30 +1,12 @@
-import { initializeApp } from 'firebase/app';
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  addDoc,
-} from 'firebase/firestore';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { db } from './dbConfig';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyC_I1gFkQz6_uBJ9QdBBrriUiYabbi3fG4',
-  authDomain: 'moneyhackey.firebaseapp.com',
-  projectId: 'moneyhackey',
-  storageBucket: 'moneyhackey.appspot.com',
-  messagingSenderId: '1039438328981',
-  appId: '1:1039438328981:web:c54a548b260dc6e900179c',
-};
+const activeAccount = '4UpnfRSWYGsvmmZP21Un';
+const accountNumber = 2654981998442;
+//const activeAccount = 'PipgqG76If0CiGua1zMF';
+//const acccountNumber = 1654981998442;
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-export const db = getFirestore(app);
-
-const activeAccount = 'PipgqG76If0CiGua1zMF';
-const acccountNumber = 1654981998442;
-
+//* Read movements from db
 //WORKS/////////////////////////////////////////////////////////
 //export const fetchAccount = async (activeAccount) => {
 //  const docRef = doc(db, 'accounts', activeAccount);
@@ -43,8 +25,12 @@ const acccountNumber = 1654981998442;
 //WORKS/////////////////////////////////////////////////////////
 
 export const fetchMovements = async (activeAccount) => {
-  //const querySnapshot = await getDocs(collection(db, 'accounts'));
+  console.log(activeAccount);
+
   const q = collection(db, `accounts/${activeAccount}/movements`);
+
+  //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
+
   const querySnapshot = await getDocs(q);
 
   let movements = [];

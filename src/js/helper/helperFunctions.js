@@ -17,26 +17,25 @@ export const precioARS = function (precio) {
 const currencies = new Map([
   ['ARS', 'Peso Argentino'],
   ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
   ['USD', 'United States dollar'],
 ]);
 ///////////////////////////////////////////////////////////////////
 
 export const createDate = (now) => {
-  //const now = new Date();
-  const day = `${now.getDate()}`.padStart(2, 0);
-  const month = `${now.getMonth() + 1}`.padStart(2, 0);
-  const year = now.getFullYear().toString().substring(2);
-  return `${year}${month}${day}`;
+  const newNow = new Date(now);
+  const day = `${newNow.getDate()}`.padStart(2, 0);
+  const month = `${newNow.getMonth() + 1}`.padStart(2, 0);
+  const year = newNow.getFullYear().toString().substring(2);
+  return `${year}-${month}-${day}`;
 };
 
-const inputName = 'Diana Gabaldon';
-export const userCreate = (inputName) => {
-  const userName = inputName
-    .trim()
-    .toLowerCase()
-    .split(' ')
-    .map((name) => name[0])
-    .join('');
-  return userName;
-};
+//const inputName = 'Diana Gabaldon';
+//export const userCreate = (inputName) => {
+//  const userName = inputName
+//    .trim()
+//    .toLowerCase()
+//    .split(' ')
+//    .map((name) => name[0])
+//    .join('');
+//  return userName;
+//};
