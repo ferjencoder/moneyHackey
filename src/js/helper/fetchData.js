@@ -1,5 +1,12 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+} from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyC_I1gFkQz6_uBJ9QdBBrriUiYabbi3fG4',
@@ -18,38 +25,40 @@ export const db = getFirestore(app);
 const activeAccount = 'PipgqG76If0CiGua1zMF';
 const acccountNumber = 1654981998442;
 
-//export const fetchData = async (accNum) => {
+//WORKS/////////////////////////////////////////////////////////
+//export const fetchAccount = async (activeAccount) => {
+//  const docRef = doc(db, 'accounts', activeAccount);
+//  ////const docRef = doc(db, 'accounts', activeAccount);
+//  const docSnap = await getDoc(docRef);
 //
-//  let acc;
-//  if (accNum) {
-//    acc = query(collection(db, 'accounts'), where('accountNumber', '==', accNum));
+//  if (docSnap.exists()) {
+//    return {
+//      activeAccount: activeAccount,
+//      ...docSnap.data(),
+//    };
 //  } else {
-//    acc = query(collection(db, 'accounts'), orderBy('accountNumber'));
+//    console.log('No such doc');
 //  }
-//  const querySnapshot = await getDocs(acc);
-//
-//  const dataFromFirestore = querySnapshot.docs.map((document) => ({
-//    id: document.id,
-//    ...document.data(),
-//  }));
-//
-//  //console.log('dataFromFirestore', dataFromFirestore);
-//
-//  return dataFromFirestore;
 //};
-//fetchData(acccountNumber);
+//WORKS/////////////////////////////////////////////////////////
 
-export const fetchAccount = async (activeAccount) => {
-  const docRef = doc(db, 'accounts', activeAccount);
-  const docSnap = await getDoc(docRef);
+export const fetchMovements = async (activeAccount) => {
+  //const querySnapshot = await getDocs(collection(db, 'accounts'));
+  const q = collection(db, `accounts/${activeAccount}/movements`);
+  const querySnapshot = await getDocs(q);
 
-  if (docSnap.exists()) {
-    //console.log('Document data:', docSnap.data());
-    return {
-      activeAccount: activeAccount,
-      ...docSnap.data(),
-    };
-  } else {
-    console.log('No such doc');
-  }
+  let movements = [];
+  querySnapshot.forEach((doc) => {
+    movements.push(doc.data());
+  });
+  return movements;
+};
+
+export const setNewMovement = async (newMovement, db, activeAccount) => {
+  const newMovementRef = await addDoc(
+    collection(db, `accounts/${activeAccount}/movements`),
+    {
+      ...newMovement,
+    }
+  );
 };

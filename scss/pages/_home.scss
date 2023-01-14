@@ -166,6 +166,34 @@ th {
   }
 }
 
+.input__sort--currency {
+  font-weight: 600;
+  color: black;
+  resize: horizontal;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.7em;
+  margin: 0;
+
+  &:active {
+    border: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    outline-offset: 0;
+    width: 100%;
+  }
+
+  &::placeholder {
+    color: #212121;
+  }
+}
+
 .movements__td--comment {
   width: 20rem;
   margin: 0;

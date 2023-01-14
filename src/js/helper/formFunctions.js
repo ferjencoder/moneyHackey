@@ -15,19 +15,8 @@ export const onFormSubmit = ({ target }) => {
   };
 };
 
-export const setNewMovement = async (newMovement, db, activeAccount) => {
-  const newMovementRef = doc(db, 'accounts', activeAccount);
-  await updateDoc(newMovementRef, { movements: arrayUnion(newMovement) });
-
-  // Atomically remove a region from the "regions" array field.
-  //  await updateDoc(washingtonRef, {
-  //    regions: arrayRemove('east_coast'),
-  //  });
-  //
-  //  await db
-  //    .collection('accounts')
-  //    .doc(activeAccount)
-  //    .update('movements', FieldValue.arrayUnion(newMovement), { merge: true });
-};
-
-//export const resetInputValue = () => {};
+//export const setNewMovement = async (newMovement, db, activeAccount) => {
+//  const newMovementRef = doc(db, 'accounts', activeAccount);
+//  await updateDoc(newMovementRef, { movements: arrayUnion(newMovement) });
+//
+//};

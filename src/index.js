@@ -12,17 +12,24 @@ import {
 } from 'firebase/firestore';
 import * as domEl from '../src/js/helper/domElements';
 import { precioARS } from '../src/js/helper/helperFunctions';
-//import fetchData from './src/js/helper/fetchData.js';
-import { fetchAccount, db } from './js/helper/fetchData';
-import { setNewMovement } from './js/helper/formFunctions';
+import {
+  fetchAccount,
+  db,
+  fetchMovements,
+  setNewMovement,
+} from './js/helper/fetchData';
+//import { setNewMovement } from './js/helper/formFunctions';
 
 const activeAccount = 'PipgqG76If0CiGua1zMF';
 const acccountNumber = 1654981998442;
 
-const accFromFirebase = await fetchAccount(activeAccount);
+//const accFromFirebase = await fetchAccount(activeAccount);
+const accFromFirebase = await fetchMovements(activeAccount);
+
+const movements = accFromFirebase;
 
 //Destructure movements from account
-const { movements } = accFromFirebase;
+//const { movements } = accFromFirebase;
 
 //Display movements from active account
 const displayMovements = (movements) => {
@@ -42,6 +49,7 @@ const displayMovements = (movements) => {
         <td>${movement.place}</td>
         <td class="movements__td--comment">${movement.comment}</td>
         <td class=" text-end pe-4">${precioARS(movement.money)}</td>
+        <td class=" text-end">${movement.currency}</td>
       </tr>
     `;
     domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -74,8 +82,6 @@ const movementsToUsd = (movements, exchangeRate) => {
 };
 
 domEl.btnExpense.addEventListener('click', function (e) {
-  console.log(e);
-
   e.preventDefault();
   let categoryEl = domEl.inputExpenseCategory.value;
   let commentEl = domEl.inputExpenseComment.value;
@@ -84,8 +90,6 @@ domEl.btnExpense.addEventListener('click', function (e) {
   let moneyEl = Number(domEl.inputExpenseMoney.value);
   let paymentsEl = domEl.inputExpensePayments.value;
   let placeEl = domEl.inputExpensePlace.value;
-
-  console.log(moneyEl);
 
   const newMovement = {
     category: categoryEl,
@@ -110,25 +114,26 @@ domEl.btnExpense.addEventListener('click', function (e) {
   updateUI(movements);
 });
 
-domEl.btnIncome.addEventListener('click', function (e) {
-  e.preventDefault();
-  const money = domEl.inputExpenseMoney.value;
-  const category = domEl.inputExpenseCategory.value;
-  const date = domEl.inputExpenseDate.value;
-  const place = domEl.inputExpensePlace.value;
-  const comment = domEl.inputExpenseComment.value;
-
-  const newMovement = {
-    date: date,
-    money: money,
-    category: category,
-    place: place,
-    comment: comment,
-    currency: currency,
-  };
-
-  setNewMovement(newMovement);
-});
+//To delete
+//domEl.btnIncome.addEventListener('click', function (e) {
+//  e.preventDefault();
+//  const money = domEl.inputExpenseMoney.value;
+//  const category = domEl.inputExpenseCategory.value;
+//  const date = domEl.inputExpenseDate.value;
+//  const place = domEl.inputExpensePlace.value;
+//  const comment = domEl.inputExpenseComment.value;
+//
+//  const newMovement = {
+//    date: date,
+//    money: money,
+//    category: category,
+//    place: place,
+//    comment: comment,
+//    currency: currency,
+//  };
+//
+//  setNewMovement(newMovement);
+//});
 
 export const updateUI = (movements) => {
   displayMovements(movements);
