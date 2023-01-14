@@ -48,7 +48,7 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 0, 0, 0;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Public Sans", sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -4960,7 +4960,7 @@ textarea.form-control-lg {
   --bs-list-group-disabled-bg: #fff;
   --bs-list-group-active-color: #fff;
   --bs-list-group-active-bg: #0d7dfd;
-  --bs-list-group-active-border-color: none;
+  --bs-list-group-active-border-color: transparent;
   display: flex;
   flex-direction: column;
   padding-left: 0;
@@ -11140,7 +11140,6 @@ textarea.form-control-lg {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.7em;
-  background-color: #b9b9b9;
   margin: 0;
 }
 .input__sort--date:active {
@@ -11155,8 +11154,7 @@ textarea.form-control-lg {
   width: 100%;
 }
 .input__sort--date::placeholder {
-  color: black;
-  font-size: 1rem;
+  color: #212121;
 }
 
 .input__sort--category {
@@ -11167,7 +11165,6 @@ textarea.form-control-lg {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.7em;
-  background-color: #b9b9b9;
   margin: 0;
 }
 .input__sort--category:active {
@@ -11182,8 +11179,7 @@ textarea.form-control-lg {
   width: 100%;
 }
 .input__sort--category::placeholder {
-  color: black;
-  font-size: 1rem;
+  color: #212121;
 }
 
 .input__sort--place {
@@ -11194,7 +11190,6 @@ textarea.form-control-lg {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.7em;
-  background-color: #b9b9b9;
   margin: 0;
 }
 .input__sort--place:active {
@@ -11209,8 +11204,7 @@ textarea.form-control-lg {
   width: 100%;
 }
 .input__sort--place::placeholder {
-  color: black;
-  font-size: 1rem;
+  color: #212121;
 }
 
 th {
@@ -11227,7 +11221,6 @@ th {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.7em;
-  background-color: #b9b9b9;
   margin: 0;
 }
 .input__sort--comment:active {
@@ -11242,8 +11235,7 @@ th {
   width: 100%;
 }
 .input__sort--comment::placeholder {
-  color: black;
-  font-size: 1rem;
+  color: #212121;
 }
 
 .input__sort--money {
@@ -11254,7 +11246,6 @@ th {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.7em;
-  background-color: #b9b9b9;
   margin: 0;
 }
 .input__sort--money:active {
@@ -11269,8 +11260,7 @@ th {
   width: 100%;
 }
 .input__sort--money::placeholder {
-  color: black;
-  font-size: 1rem;
+  color: #212121;
 }
 
 .movements__td--comment {

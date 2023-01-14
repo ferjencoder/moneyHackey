@@ -1,41 +1,45 @@
-import { addDoc, doc, setDoc } from 'firebase/firestore';
+import { async } from '@firebase/util';
+import {
+  addDoc,
+  arrayUnion,
+  collection,
+  doc,
+  FieldValue,
+  setDoc,
+  update,
+  updateDoc,
+  where,
+} from 'firebase/firestore';
 import * as domEl from '../src/js/helper/domElements';
-import precioARS from '../src/js/helper/helperFunctions';
+import { precioARS } from '../src/js/helper/helperFunctions';
 //import fetchData from './src/js/helper/fetchData.js';
 import { fetchAccount, db } from './js/helper/fetchData';
+import { setNewMovement } from './js/helper/formFunctions';
 
-window.addEventListener('DOMContentLoaded', () => {});
-
-//Bring data from json
 const activeAccount = 'PipgqG76If0CiGua1zMF';
 const acccountNumber = 1654981998442;
-//
+
 const accFromFirebase = await fetchAccount(activeAccount);
-//
-console.log(accFromFirebase);
 
 //Destructure movements from account
 const { movements } = accFromFirebase;
 
-console.log(movements);
-
 //Display movements from active account
 const displayMovements = (movements) => {
-  console.log(movements);
-
   domEl.containerMovements.innerHTML = '';
 
   movements.forEach((movement) => {
+    let mov;
+    movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
+
     const html = `
       <tr class="movement__row">
         <td class="p-0 m-0 position-relative">
-          <button class="movements__type movements__type--${
-            movement.type
-          }"></button>
+          <button class="movements__type movements__type--${mov}"></button>
         </td>
         <td>${movement.date}</td>
         <td>${movement.category}</td>
-        <td>${movement.store}</td>
+        <td>${movement.place}</td>
         <td class="movements__td--comment">${movement.comment}</td>
         <td class=" text-end pe-4">${precioARS(movement.money)}</td>
       </tr>
@@ -48,6 +52,8 @@ displayMovements(movements);
 //Balance Total => sums all movements
 const balanceTotal = (movements) => {
   let sum = 0;
+  console.log(movements);
+
   movements.map((movements) => {
     return (sum += movements.money);
   });
@@ -55,18 +61,6 @@ const balanceTotal = (movements) => {
   domEl.labelBalance.innerHTML = `${precioARS(sum)}`;
 };
 balanceTotal(movements);
-
-/////////////////////////////////////////////////
-// LECTURES
-
-const currencies = new Map([
-  ['ARS', 'Peso Argentino'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-  ['USD', 'United States dollar'],
-]);
-
-/////////////////////////////////////////////////
 
 const arsToUsdBlue = 355;
 const arsToUsdOfficial = 187.25;
@@ -79,40 +73,41 @@ const movementsToUsd = (movements, exchangeRate) => {
   return movementToUsdBlue;
 };
 
-console.log({ movements });
-console.log(movementsToUsd(movements, arsToEuroOfficial));
-/////////////////////////////////////////////////
-
 domEl.btnExpense.addEventListener('click', function (e) {
+  console.log(e);
+
   e.preventDefault();
-  const category = domEl.inputExpenseCategory.value;
-  const comment = domEl.inputExpenseComment.value;
-  const currency = domEl.inputExpenseCurrency.value;
-  const date = domEl.inputExpenseDate.value;
-  const money = domEl.inputExpenseMoney.value;
-  const payments = domEl.inputExpensePayments.value;
-  const place = domEl.inputExpensePlace.value;
+  let categoryEl = domEl.inputExpenseCategory.value;
+  let commentEl = domEl.inputExpenseComment.value;
+  let currencyEl = domEl.inputExpenseCurrency.value;
+  let dateEl = domEl.inputExpenseDate.value;
+  let moneyEl = Number(domEl.inputExpenseMoney.value);
+  let paymentsEl = domEl.inputExpensePayments.value;
+  let placeEl = domEl.inputExpensePlace.value;
 
-  console.log(db);
-  console.log(movements);
-
-  console.log(date, money, category, place, payments, comment, currency);
+  console.log(moneyEl);
 
   const newMovement = {
-    category: category,
-    comment: comment,
-    currency: 'ARS',
-    date: date,
-    money: money,
-    payments: 3,
-    place: place,
+    category: categoryEl,
+    comment: commentEl,
+    currency: currencyEl,
+    date: dateEl,
+    money: moneyEl,
+    payments: paymentsEl,
+    place: placeEl,
   };
-  console.log(newMovement);
-  //document.write('' + JSON.stringify(newMovement));
-  addDoc(doc(db, 'accounts', movements), newMovement)
-    .then(({ id }) => console.log(id))
-    .catch((err) => console.log(err));
-  //await setDoc(doc())
+
+  setNewMovement(newMovement, db, activeAccount);
+
+  domEl.inputExpenseCategory.value = '';
+  domEl.inputExpenseComment.value = '';
+  domEl.inputExpenseCurrency.value = '';
+  domEl.inputExpenseDate.value = '';
+  domEl.inputExpenseMoney.value = '';
+  domEl.inputExpensePayments.value = '';
+  domEl.inputExpensePlace.value = '';
+
+  updateUI(movements);
 });
 
 domEl.btnIncome.addEventListener('click', function (e) {
@@ -123,8 +118,6 @@ domEl.btnIncome.addEventListener('click', function (e) {
   const place = domEl.inputExpensePlace.value;
   const comment = domEl.inputExpenseComment.value;
 
-  console.log(money, category, date, place, comment, currency);
-
   const newMovement = {
     date: date,
     money: money,
@@ -133,9 +126,11 @@ domEl.btnIncome.addEventListener('click', function (e) {
     comment: comment,
     currency: currency,
   };
-  console.log(newMovement);
 
-  setDoc(doc(db, 'accounts', movements), newMovement);
-
-  //document.write('' + JSON.stringify(newMovement));
+  setNewMovement(newMovement);
 });
+
+export const updateUI = (movements) => {
+  displayMovements(movements);
+  balanceTotal(movements);
+};

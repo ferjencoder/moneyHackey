@@ -1,22 +1,5 @@
 import { initializeApp } from 'firebase/app';
-//import {
-//  getFirestore,
-//  query,
-//  orderBy,
-//  where,
-//  collection,
-//  doc,
-//  docs,
-//  getDoc, getDocs,
-//} from 'firebase/firestore';
-
-import {
-  getFirestore,
-  doc,
-  getDoc,
-  addDoc,
-  collection,
-} from 'firebase/firestore';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyC_I1gFkQz6_uBJ9QdBBrriUiYabbi3fG4',
@@ -61,7 +44,7 @@ export const fetchAccount = async (activeAccount) => {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log('Document data:', docSnap.data());
+    //console.log('Document data:', docSnap.data());
     return {
       activeAccount: activeAccount,
       ...docSnap.data(),
@@ -70,5 +53,3 @@ export const fetchAccount = async (activeAccount) => {
     console.log('No such doc');
   }
 };
-
-export const saveMovement = (movement) => addDoc(collection(db, 'accounts'));

@@ -1,4 +1,4 @@
-const precioARS = function (precio) {
+export const precioARS = function (precio) {
   // PASS ANY NUMBER
   let precioToFormat = precio;
   const options = {
@@ -13,8 +13,24 @@ const precioARS = function (precio) {
   return anyPrecioARS;
 };
 
-const inputName = 'Diana Gabaldon';
+//not currently used //////////////////////////////////////////////
+const currencies = new Map([
+  ['ARS', 'Peso Argentino'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+  ['USD', 'United States dollar'],
+]);
+///////////////////////////////////////////////////////////////////
 
+export const createDate = (now) => {
+  //const now = new Date();
+  const day = `${now.getDate()}`.padStart(2, 0);
+  const month = `${now.getMonth() + 1}`.padStart(2, 0);
+  const year = now.getFullYear().toString().substring(2);
+  return `${year}${month}${day}`;
+};
+
+const inputName = 'Diana Gabaldon';
 export const userCreate = (inputName) => {
   const userName = inputName
     .trim()
@@ -24,7 +40,3 @@ export const userCreate = (inputName) => {
     .join('');
   return userName;
 };
-
-//console.log(userCreate(inputName));
-
-export default precioARS;

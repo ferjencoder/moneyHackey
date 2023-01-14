@@ -1,3 +1,6 @@
+//node_modules/.bin/webpack
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,6 +11,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  watch: true,
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
+  ],
+  //mode: 'development',
   experiments: {
     topLevelAwait: true,
   },
