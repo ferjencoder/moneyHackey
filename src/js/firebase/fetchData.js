@@ -43,11 +43,13 @@ export const fetchMovements = async (activeAccount) => {
 export const fetchUsers = async (activeUser) => {
   console.log(activeUser);
 
-  const q = collection(db, `users/${activeUser}/userName`);
+  const q = collection(db, `users/${activeUser}`);
 
   //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
 
   const querySnapshot = await getDoc(q);
+
+  console.log(q);
 
   let users = [];
   querySnapshot.forEach((doc) => {

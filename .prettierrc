@@ -1,5 +1,7 @@
 {
   "singleQuote": true,
   "bracketSpacing": true,
-  "bracketSameLine": true
+  "bracketSameLine": true,
+  "singleAttributePerLine": false,
+  "html.format.wrapLineLength": 0
 }

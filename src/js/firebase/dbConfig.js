@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import 'firebase/firestore';
+
 require('dotenv').config();
 
 const API_KEY_NAME = process.env.API_KEY_NAME;

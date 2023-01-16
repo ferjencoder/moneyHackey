@@ -5,6 +5,7 @@ const path = require('path');
 
 module.exports = {
   // The entry point file described above
+  mode: 'development',
   entry: './src/index.js',
   // The location of the build folder described above
   output: {

@@ -11,14 +11,13 @@ import {
   where,
 } from 'firebase/firestore';
 import * as domEl from '../src/js/helper/domElements';
-import { precioARS, createDate } from '../src/js/helper/helperFunctions';
+import { createDate, precioARS } from '../src/js/helper/helperFunctions';
 import {
   fetchMovements,
   setNewMovement,
   updateUI,
-} from './js/helper/fetchData';
-import { db } from './js/helper/dbConfig';
-//import { setNewMovement } from './js/helper/formFunctions';
+} from './js/firebase/fetchData';
+import { db } from './js/firebase/dbConfig';
 
 const activeAccount = '4UpnfRSWYGsvmmZP21Un';
 const accountNumber = 2654981998442;
