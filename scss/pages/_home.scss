@@ -19,6 +19,7 @@ a {
 
 .li-bd {
   font-size: 0.85rem;
+  border: 0;
   border-bottom: 1px solid rgb(100, 100, 100);
   background-color: rgb(39, 39, 39);
 }
@@ -37,6 +38,8 @@ a {
   border-radius: 0;
   border-bottom: 1px solid rgb(190, 190, 190);
   color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 
   &::placeholder {
     color: white;
@@ -49,50 +52,24 @@ a {
     outline: none;
     border-bottom: 1px solid rgb(190, 190, 190);
   }
+
+  &:focus::placeholder {
+    color: rgb(100, 100, 100);
+  }
 }
 
-.expense__input {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+#floatingInput,
+#floatingPassword {
+  border-radius: 0;
   border-bottom: 1px solid rgb(100, 100, 100);
 }
 
-//.expense__input--date {
-//  ::webkit-calendar-picker-indicator {
-//    color: #5de17e;
-//  }
-//}
-
-input[type=date]::-webkit-calendar-picker-indicator {
-  color: rgb(231, 11, 11);
-  z-index: 0;
-}
-
-input[type=date]::-webkit-calendar-picker-indicator:before {
-  background: #eee;
-  background: linear-gradient(90deg, #eee, #fff);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 24px;
-  content: '';
-  display: block;
-  height: 22px;
-  left: -2px;
-  position: absolute;
-  top: -5px;
-  width: 22px;
-  z-index: -1;
-}
-
-input[type=date]::-webkit-calendar-picker-indicator:hover {
-  background: none;
-}
-
-input[type=date]:focus {
-  border-color: #3399ff;
+.expense__input {
+  border-bottom: 1px solid rgb(100, 100, 100);
 }
 
 .stats--possitive {
-  color: #5de17e;
+  color: #39b385;
 }
 
 .stats--negative {
@@ -112,10 +89,26 @@ input[type=date]:focus {
   border: 0;
 }
 
-.movements__type--withdrawal {
-  background-color: #dc3545;
+.negative {
+  color: #f75f48;
+
+  &:link {
+    color: #f75f48;
+  }
+
+  &:visited {
+    color: #f75f48;
+  }
 }
 
-.movements__type--deposit {
-  background-color: #5de17e;
+.possitive {
+  color: #39b385;
+
+  &:link {
+    color: #39b385;
+  }
+
+  &:visited {
+    color: #39b385;
+  }
 }

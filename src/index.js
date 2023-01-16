@@ -48,7 +48,7 @@ const displayMovements = (movements) => {
 
   movements.forEach((movement) => {
     let mov;
-    movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
+    movement.money > 0 ? (mov = 'possitive') : (mov = 'negative');
 
     const dateHtml = `
       <li class="collection-item list-item py-3 li-bd">
@@ -71,12 +71,12 @@ const displayMovements = (movements) => {
       </li>
     `;
     const moneyHtml = `
-      <li class="collection-item list-item py-3 li-bd">
-        <a href="#">${precioARS(movement.money)}</a>
+      <li class="collection-item list-item py-3 li-bd pe-0 pe-md-3">
+        <a class="${mov}" href="#">${precioARS(movement.money)}</a>
       </li>
     `;
     const currencyHtml = `
-      <li class="collection-item list-item py-3 li-bd">
+      <li class="collection-item list-item py-3 li-bd pe-0 pe-md-3">
         <a href="#">${movement.currency}</a>
       </li>     
     `;
@@ -212,3 +212,5 @@ const createUser = async () => {
   //
   //  console.log(user);
 };
+
+const usersRef = db;

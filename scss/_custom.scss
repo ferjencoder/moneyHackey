@@ -23,7 +23,7 @@
   --bs-gray-900: rgb(33, 37, 41);
   --bs-primary: #e52a72;
   --bs-secondary: #6f42c1;
-  --bs-success: #5de17e;
+  --bs-success: #39b385;
   --bs-info: #0dcaf0;
   --bs-warning: #ffb003;
   --bs-danger: #dc3545;
@@ -83,7 +83,7 @@ $font-family-sans-serif: // Cross-platform generic font family (default user int
 /* COLORS */
 $blue: #0d7dfd;
 $indigo: #6610f2;
-$purple: #6f42c1;
+$purple: #915ff0;
 $pink: #e52a72;
 $red: #dc3545;
 $orange: #ffb003;
@@ -93,16 +93,20 @@ $teal: #5de17e;
 $cyan: #0dcaf0;
 $expense: #ffb003;
 $installment: #dc3545;
-$income: #5de17e;
+$income: #39b385;
 
 $primary: $blue ;
 $secondary: #333;
-$success: $green ;
+$success: #39b385;
 $info: $cyan ;
 $warning: $yellow ;
 $danger: $red ;
 $light: #f8f9fa;
-$dark: #212529;
+$purple: #915ff0;
+$dark: #1c1c1c;
+$dark-2: #272727;
+$dark-3: #373737;
+$dark-4: #373737;
 
 $colors: (
   "blue": $blue,
@@ -133,6 +137,10 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "dark-2": $dark-2,
+  "dark-3": $dark-3,
+  "dark-4": $dark-4,
+  "purple": $purple,
   "expense": $expense,
   "installment": $installment,
   "income": $income
@@ -182,6 +190,10 @@ $input-btn-focus-color-opacity: 100%;
 /* LIST GROUP */
 //$list-group-border-width: 0;
 $list-group-active-border-color: transparent;
+
+$caret-width: 0;
+$caret-vertical-align: 0;
+$caret-spacing: 0;
 
 /* DARK MODE */
 //$navbar-dark-color: rgba($white, .55);

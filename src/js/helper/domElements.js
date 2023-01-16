@@ -52,7 +52,7 @@ export const inputExpensePayments = document.querySelector(
 export const inputExpenseCurrency = document.querySelector(
   '.expense__input--currency'
 );
-export const btnExpense = document.querySelector('.btn-expense');
+export const btnExpense = document.querySelector('#btn-exp');
 
 export const inputIncomeMoney = document.querySelector('.income__input--money');
 export const inputIncomeCategory = document.querySelector(
