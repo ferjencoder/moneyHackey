@@ -33,6 +33,7 @@
   --bs-ecd-clr-9: rgb(226, 213, 222);
   --bs-ecd-clr-10: rgb(230, 227, 222);
   --bs-primary-rgb: 121, 85, 105;
+  --bs-list-group-bg: 39, 39, 39;
   --bs-secondary-rgb: 166, 128, 140;
   --bs-success-rgb: 229, 239, 230;
   --bs-info-rgb: 178, 208, 255;
@@ -58,6 +59,27 @@
   --bs-body-bg: #fff;
 }
 
+$font-family-sans-serif: // Cross-platform generic font family (default user interface font)
+  system-ui,
+  // Safari for macOS and iOS (San Francisco)
+  -apple-system,
+  // Windows
+  "Public Sans",
+  // Android
+  Roboto,
+  // older macOS and iOS
+  "Helvetica Neue"
+  // Linux
+  "Noto Sans",
+  "Liberation Sans",
+  // Basic web fallback
+  Arial,
+  // Sans serif fallback
+  sans-serif,
+  // Emoji fonts
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+
 /* COLORS */
 $blue: #0d7dfd;
 $indigo: #6610f2;
@@ -74,7 +96,7 @@ $installment: #dc3545;
 $income: #5de17e;
 
 $primary: $blue ;
-$secondary: $pink ;
+$secondary: #333;
 $success: $green ;
 $info: $cyan ;
 $warning: $yellow ;
@@ -118,44 +140,57 @@ $theme-colors: (
 
 
 /* BUTTONS */
-$btn-font-size: 0.75rem;
-$btn-box-shadow: none;
-$btn-focus-width: 0;
-$btn-focus-box-shadow: none;
-$btn-disabled-opacity: none;
-$btn-active-box-shadow: 0;
-$btn-border-radius: 0;
-$btn-border-width: 0;
+//$btn-font-size: 0.75rem;
+//$btn-box-shadow: none;
+//$btn-focus-width: 0;
+//$btn-focus-box-shadow: none;
+//$btn-disabled-opacity: none;
+//$btn-active-box-shadow: 0;
+//$btn-border-radius: 0;
+//$btn-border-width: 0;
 
 /* CLOSE BUTTON */
 $btn-close-focus-shadow: none;
 
 /* FONTS */
-$font-family-sans-serif: 'Poppins', sans-serif;
+$font-family-sans-serif: "Public Sans", sans-serif;
+
+/* LIST GROUP */
+$list-group-bg: 39, 39, 39;
 
 /* INPUT */
+$input-btn-border-width: 0;
 $input-border-color: transparent;
-$input-border-radius: 0;
+//$input-border-radius: 0;
 $input-border-width: 0;
 $input-box-shadow: none;
-$input-color: black;
-$input-disabled-color: black;
-//$input-focus-bg: transparent;
-$input-focus-border-color: transparent;
-$input-focus-box-shadow: none;
-//$input-focus-color: transparent;
-$input-font-size: 0.9rem;
-$input-placeholder-color: black;
-$input-plaintext-color: black;
-$placeholder-opacity-max: 100%;
-$placeholder-opacity-min: 100%;
+$input-color: white;
+//$input-disabled-color: white;
+$input-focus-bg: transparent;
+//$input-focus-border-color: transparent;
+//$input-focus-box-shadow: none;
+////$input-focus-color: transparent;
+//$input-font-size: 0.9rem;
+$input-placeholder-color: white;
+$input-plaintext-color: white;
+//$placeholder-opacity-max: 100%;
+//$placeholder-opacity-min: 100%;
 $input-btn-border-width: 0;
 $input-btn-focus-width: 0;
 $input-btn-focus-color-opacity: 100%;
 
 /* LIST GROUP */
-
-$list-group-border-width: 0;
+//$list-group-border-width: 0;
 $list-group-active-border-color: transparent;
+
+/* DARK MODE */
+//$navbar-dark-color: rgba($white, .55);
+//$navbar-dark-hover-color: rgba($white, .75);
+//$navbar-dark-active-color: $white;
+//$navbar-dark-disabled-color: rgba($white, .25);
+//$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+//$navbar-dark-toggler-border-color: rgba($white, .1);
+//$navbar-dark-brand-color: $navbar-dark-active-color;
+//$navbar-dark-brand-hover-color: $navbar-dark-active-color;
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

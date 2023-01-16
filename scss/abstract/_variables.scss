@@ -4,7 +4,7 @@
 $ff-logo: 'Cotoris';
 $ff-logo-bold: 'cotoris bold';
 $ff-logo-heavy: 'cotoris bolder';
-$ff-primary: 'Poppins', sans-serif;
+$ff-primary: 'Public Sans', sans-serif;
 $ff-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
@@ -33,3 +33,15 @@ $shdw-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
 $transition: all 0.3s linear;
 $spacing: 0.1rem;
 $radius: 0.25rem;
+
+.bg-dark-1 {
+  background-color: #1c1c1c;
+}
+
+.bg-dark-2 {
+  background-color: #272727;
+}
+
+.bg-dark-3 {
+  background-color: #373737;
+}

@@ -37,6 +37,7 @@ export const fetchMovements = async (activeAccount) => {
   querySnapshot.forEach((doc) => {
     movements.push(doc.data());
   });
+  //updateUI();
   return movements;
 };
 
@@ -48,3 +49,9 @@ export const setNewMovement = async (newMovement, db, activeAccount) => {
     }
   );
 };
+
+//export const updateUI = async (activeAccount) => {
+//  await fetchMovements(activeAccount)
+//    .then(displayMovements(movements))
+//    .then(balanceTotal(movements));
+//};

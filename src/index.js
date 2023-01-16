@@ -12,7 +12,11 @@ import {
 } from 'firebase/firestore';
 import * as domEl from '../src/js/helper/domElements';
 import { precioARS, createDate } from '../src/js/helper/helperFunctions';
-import { fetchMovements, setNewMovement } from './js/helper/fetchData';
+import {
+  fetchMovements,
+  setNewMovement,
+  updateUI,
+} from './js/helper/fetchData';
 import { db } from './js/helper/dbConfig';
 //import { setNewMovement } from './js/helper/formFunctions';
 
@@ -21,10 +25,70 @@ const accountNumber = 2654981998442;
 //const activeAccount = 'PipgqG76If0CiGua1zMF';
 //const accountNumber = 1654981998442;
 
-//const accFromFirebase = await fetchAccount(activeAccount);
+//Info ///////////////////////////////////////////
+//Info working code
 const accFromFirebase = await fetchMovements(activeAccount);
-
 const movements = accFromFirebase;
+//Info ///////////////////////////////////////////
+
+//const getData = async () => {
+//  const accFromFirebase = await fetchMovements(activeAccount);
+//  const movements = accFromFirebase;
+//};
+
+const displayMovements = (movements) => {
+  console.log(movements);
+
+  domEl.ulMovementDate.innerHTML = '';
+  domEl.ulMovementCategory.innerHTML = '';
+  domEl.ulMovementPlace.innerHTML = '';
+  domEl.ulMovementComment.innerHTML = '';
+  domEl.ulMovementMoney.innerHTML = '';
+  domEl.ulMovementcurrency.innerHTML = '';
+
+  movements.forEach((movement) => {
+    let mov;
+    movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
+
+    const dateHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${movement.date}</a>
+      </li>
+    `;
+    const categoryHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${movement.category}</a>
+      </li>
+    `;
+    const placeHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${movement.place}</a>
+      </li>
+    `;
+    const commentHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${movement.comment}</a>
+      </li>
+    `;
+    const moneyHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${precioARS(movement.money)}</a>
+      </li>
+    `;
+    const currencyHtml = `
+      <li class="collection-item list-item py-3 li-bd">
+        <a href="#">${movement.currency}</a>
+      </li>     
+    `;
+
+    domEl.ulMovementDate.insertAdjacentHTML('afterbegin', dateHtml);
+    domEl.ulMovementCategory.insertAdjacentHTML('afterbegin', categoryHtml);
+    domEl.ulMovementPlace.insertAdjacentHTML('afterbegin', placeHtml);
+    domEl.ulMovementComment.insertAdjacentHTML('afterbegin', commentHtml);
+    domEl.ulMovementMoney.insertAdjacentHTML('afterbegin', moneyHtml);
+    domEl.ulMovementcurrency.insertAdjacentHTML('afterbegin', currencyHtml);
+  });
+};
 
 if (movements.length < 1) {
   domEl.containerMovements.innerHTML = '';
@@ -40,37 +104,12 @@ if (movements.length < 1) {
   domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
 } else {
   //Display movements from active account
-  const displayMovements = (movements) => {
-    console.log(movements);
-
-    domEl.containerMovements.innerHTML = '';
-
-    movements.forEach((movement) => {
-      let mov;
-      movement.money > 0 ? (mov = 'deposit') : (mov = 'withdrawal');
-
-      const html = `
-      <tr class="movement__row">
-        <td class="p-0 m-0 position-relative">
-          <button class="movements__type movements__type--${mov}"></button>
-        </td>
-        <td>${movement.date}</td>
-        <td>${movement.category}</td>
-        <td>${movement.place}</td>
-        <td class="movements__td--comment">${movement.comment}</td>
-        <td class=" text-end pe-4">${precioARS(movement.money)}</td>
-        <td class=" text-end">${movement.currency}</td>
-      </tr>
-    `;
-      domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
-    });
-  };
   displayMovements(movements);
 }
+
 //Balance Total => sums all movements
 const balanceTotal = (movements) => {
   let sum = 0;
-  console.log(movements);
 
   movements.map((movements) => {
     return (sum += movements.money);
@@ -97,7 +136,7 @@ domEl.btnExpense.addEventListener('click', function (e) {
   let commentEl = domEl.inputExpenseComment.value;
   let currencyEl = domEl.inputExpenseCurrency.value;
   let dateEl = createDate(domEl.inputExpenseDate.value);
-  let moneyEl = Number(domEl.inputExpenseMoney.value);
+  let moneyEl = -Number(domEl.inputExpenseMoney.value);
   let paymentsEl = domEl.inputExpensePayments.value;
   let placeEl = domEl.inputExpensePlace.value;
 
@@ -121,8 +160,15 @@ domEl.btnExpense.addEventListener('click', function (e) {
   domEl.inputExpensePayments.value = '';
   domEl.inputExpensePlace.value = '';
 
-  updateUI(movements);
+  //! Cuidado que le vuelve a enviar los mismos movements
+  //updateUI();
 });
+
+//export const updateUI = async (activeAccount) => {
+//  await fetchMovements(activeAccount)
+//    .then(displayMovements(movements))
+//    .then(balanceTotal(movements));
+//};
 
 //To delete
 //domEl.btnIncome.addEventListener('click', function (e) {
@@ -145,30 +191,24 @@ domEl.btnExpense.addEventListener('click', function (e) {
 //  setNewMovement(newMovement);
 //});
 
-export const updateUI = async (movements) => {
-  await fetchMovements(activeAccount);
-  displayMovements(movements);
-  balanceTotal(movements);
+const createUser = async () => {
+  //  const user = {
+  //    account: 'account',
+  //    accountNumber: 'accountNumber',
+  //    active: 'active',
+  //    email: 'email',
+  //    pin: 'pin',
+  //    uid: 'uid',
+  //    userName: 'userName',
+  //    userlmg: 'userlmg',
+  //  };
+  //
+  //  try {
+  //    const userRef = await addDoc(collection(db, 'users'), user);
+  //    console.log('Document written with ID: ', userRef.id);
+  //  } catch (e) {
+  //    console.error('Error adding document: ', e);
+  //  }
+  //
+  //  console.log(user);
 };
-
-//const createUser = async () => {
-//  const user = {
-//    account: 'account',
-//    accountNumber: 'accountNumber',
-//    active: 'active',
-//    email: 'email',
-//    pin: 'pin',
-//    uid: 'uid',
-//    userName: 'userName',
-//    userlmg: 'userlmg',
-//  };
-//
-//  try {
-//    const userRef = await addDoc(collection(db, 'users'), user);
-//    console.log('Document written with ID: ', userRef.id);
-//  } catch (e) {
-//    console.error('Error adding document: ', e);
-//  }
-//
-//  console.log(user);
-//};

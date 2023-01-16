@@ -1,5 +1,6 @@
 // Elements
 //export const labelWelcome = document.querySelector('.welcome');
+
 //export const labelDate = document.querySelector('.date');
 export const labelBalance = document.querySelector('.balance__value');
 //export const labelSumIn = document.querySelector('.summary__value--in');
@@ -10,10 +11,20 @@ export const labelBalance = document.querySelector('.balance__value');
 //export const labelTimer = document.querySelector('.timer');
 
 export const containerApp = document.querySelector('.app');
-export const containerMovements = document.querySelector('.movements');
+export const containerMovements = document.querySelector(
+  '.container-movements'
+);
+
+export const ulMovementDate = document.getElementById('date');
+export const ulMovementCategory = document.getElementById('category');
+export const ulMovementPlace = document.getElementById('place');
+export const ulMovementComment = document.getElementById('comment');
+export const ulMovementMoney = document.getElementById('money');
+export const ulMovementcurrency = document.getElementById('currency');
+
 export const table = document.getElementById('movements-table');
 
-//export const btnLogin = document.querySelector('.login__btn');
+export const btnLogin = document.querySelector('.login__btn');
 //export const btnTransfer = document.querySelector('.form__btn--transfer');
 //export const btnLoan = document.querySelector('.form__btn--loan');
 //export const btnClose = document.querySelector('.form__btn--close');
