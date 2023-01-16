@@ -11618,6 +11618,11 @@ a:visited {
   color: #39b385;
 }
 
+.signin-logo {
+  height: 36px;
+  width: 36px;
+}
+
 /* VENDORS */
 /* ABSTRACT */
 /* BASE */

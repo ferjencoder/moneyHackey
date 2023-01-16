@@ -4,10 +4,10 @@ import { db } from './dbConfig';
 const activeAccount = '4UpnfRSWYGsvmmZP21Un';
 const accountNumber = 2654981998442;
 const activeUser = '7x6TAa7Zy3reySiw7hMk';
-//const activeAccount = 'PipgqG76If0CiGua1zMF';
-//const acccountNumber = 1654981998442;
 
 //* Read movements from db
+//const activeAccount = 'PipgqG76If0CiGua1zMF';
+//const acccountNumber = 1654981998442;
 //WORKS/////////////////////////////////////////////////////////
 //export const fetchAccount = async (activeAccount) => {
 //  const docRef = doc(db, 'accounts', activeAccount);
@@ -29,8 +29,6 @@ export const fetchMovements = async (activeAccount) => {
   console.log(activeAccount);
 
   const q = collection(db, `accounts/${activeAccount}/movements`);
-
-  //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
 
   const querySnapshot = await getDocs(q);
 
