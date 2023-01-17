@@ -1,6 +1,13 @@
-import { AuthErrorCodes } from 'firebase/auth';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
-import { passwordInpValidation } from './domElements';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth';
+import { doc, updateDoc } from 'firebase/firestore';
+import { app } from '../firebase/dbConfig';
+import { btnLogin } from './domElements';
 
 //import {db} from './fetchData';
 

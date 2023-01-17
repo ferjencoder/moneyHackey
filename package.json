@@ -19,6 +19,7 @@
   "author": "ferJen",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "sass": "^1.57.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
@@ -31,8 +32,6 @@
     "dotenv": "^16.0.3",
     "firebase": "^9.15.0",
     "firebase-tools": "^11.20.0",
-    "html-webpack-plugin": "^5.5.0",
-    "postcss-cli": "^10.1.0",
-    "react-bootstrap": "^2.7.0"
+    "postcss-cli": "^10.1.0"
   }
 }

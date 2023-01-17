@@ -6,6 +6,7 @@ const path = require('path');
 module.exports = {
   // The entry point file described above
   //mode: 'development',
+  mode: 'production',
   devtool: 'eval-source-map',
   entry: './src/index.js',
   // The location of the build folder described above

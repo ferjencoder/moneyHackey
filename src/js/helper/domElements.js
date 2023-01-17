@@ -33,6 +33,7 @@ export const ulMovementcurrency = document.getElementById('currency');
 export const table = document.getElementById('movements-table');
 
 export const btnLogin = document.querySelector('#btn-login');
+export const btnLogout = document.querySelector('#btn-logout');
 export const btnSignup = document.querySelector('#btn-signup');
 export const valueEmail = document.querySelector('#inp-login-email');
 export const valuePassword = document.querySelector('#inp-login-password');

@@ -207,4 +207,8 @@ $caret-spacing: 0;
 //$navbar-dark-brand-color: $navbar-dark-active-color;
 //$navbar-dark-brand-hover-color: $navbar-dark-active-color;
 
+.show {
+  display: contents;
+}
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

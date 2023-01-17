@@ -8,8 +8,10 @@ import {
   connectAuthEmulator,
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
 } from 'firebase/auth';
 import { async } from '@firebase/util';
@@ -87,7 +89,7 @@ const displayMovements = (movements) => {
 };
 
 if (movements.length < 1) {
-  domEl.containerMovements.innerHTML = '';
+  domEl.movementsApp.innerHTML = '';
 
   const html = `
       <tr class="movement__row">
@@ -97,7 +99,7 @@ if (movements.length < 1) {
         <td colspan="6" >"No expense records yet... start your first one! 😁</td>
       </tr>
     `;
-  domEl.containerMovements.insertAdjacentHTML('afterbegin', html);
+  domEl.movementsApp.insertAdjacentHTML('afterbegin', html);
 } else {
   //Display movements from active account
   displayMovements(movements);
@@ -190,122 +192,142 @@ domEl.btnExpense.addEventListener('click', function (e) {
 const auth = getAuth(app);
 //connectAuthEmulator(auth, 'http://localhost:5500');
 
-export const showLoginApp = () => {
-  domEl.loginApp.style.display = 'block';
-  domEl.containerApp.style.display = 'none';
-};
+//export const showLoginApp = () => {
+//  domEl.loginApp.style.display = 'block';
+//  domEl.containerApp.style.display = 'none';
+//};
+//
+//export const showApp = () => {
+//  domEl.loginApp.style.display = 'none';
+//  domEl.containerApp.style.display = 'block';
+//};
+//
+//export const hideLoginError = () => {
+//  domEl.passwordInpValidation.style.display = 'none';
+//  domEl.passwordInpValidation.innerHTML = '';
+//};
+//
+//export const showLoginError = (error) => {
+//  domEl.passwordInpValidation.style.display = 'block';
+//  domEl.valuePassword.className = 'form-control bg-dark-2 is-invalid';
+//
+//  if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
+//    domEl.passwordInpValidation.innerHTML = 'Wrong password. Try again.';
+//  } else {
+//    console.log(`Error: ${error.message}`);
+//    domEl.passwordInpValidation.innerHTML = `Wrong password. Try again.`;
+//  }
+//};
+//
+//export const showLoginState = (user) => {
+//  console.log(`${user.displayName} (udi: ${user.uid}, email: ${user.email})`);
+//};
+//
+//hideLoginError();
+//
+//const loginEmailPassword = async () => {
+//  console.log(`you've been clicked!!`);
+//
+//  console.log(domEl.valueEmail.value);
+//  console.log(domEl.valuePassword.value);
+//  const loginEmail = domEl.valueEmail.value;
+//  const loginPassword = domEl.valuePassword.value;
+//
+//  try {
+//    const userCredential = await signInWithEmailAndPassword(
+//      auth,
+//      loginEmail,
+//      loginEmailPassword
+//    );
+//    console.log(userCredential.user);
+//  } catch (error) {
+//    console.log(error);
+//    showLoginError(error);
+//  }
+//};
+//domEl.btnLogin.addEventListener('click', loginEmailPassword);
+//
+//const createUser = async () => {
+//  console.log(`you've been clicked!!`);
+//
+//  console.log(domEl.valueEmail.value);
+//  console.log(domEl.valuePassword.value);
+//  const loginEmail = domEl.valueEmail.value;
+//  const loginPassword = domEl.valuePassword.value;
+//
+//  try {
+//    const userCredential = await createUserWithEmailAndPassword(
+//      auth,
+//      loginEmail,
+//      loginEmailPassword
+//    );
+//    console.log(userCredential.user);
+//  } catch (error) {
+//    console.log(error);
+//    showLoginError(error);
+//  }
+//};
+//
+//domEl.btnSignup.addEventListener('click', createUser);
+//
+//const monitorAuthState = async () => {
+//  onAuthStateChanged(auth, (user) => {
+//    if (user) {
+//      console.log(user);
+//
+//      showApp();
+//      showLoginState(user);
+//
+//      hideLoginError();
+//    } else {
+//      showLoginApp();
+//    }
+//  });
+//};
+//
+//// Log out
+//const logout = async () => {
+//  await signOut(auth);
+//};
+//
+//monitorAuthState();
 
-export const showApp = () => {
-  domEl.loginApp.style.display = 'none';
-  domEl.containerApp.style.display = 'block';
-};
+const googleAuthProvider = new GoogleAuthProvider();
 
-export const hideLoginError = () => {
-  domEl.passwordInpValidation.style.display = 'none';
-  domEl.passwordInpValidation.innerHTML = '';
-};
-
-export const showLoginError = (error) => {
-  domEl.passwordInpValidation.style.display = 'block';
-  domEl.valuePassword.className = 'form-control bg-dark-2 is-invalid';
-
-  if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
-    domEl.passwordInpValidation.innerHTML = 'Wrong password. Try again.';
-  } else {
-    console.log(`Error: ${error.message}`);
-    domEl.passwordInpValidation.innerHTML = `Wrong password. Try again.`;
-  }
-};
-
-export const showLoginState = (user) => {
-  console.log(`${user.displayName} (udi: ${user.uid}, email: ${user.email})`);
-};
-
-hideLoginError();
-
-const loginEmailPassword = async () => {
-  console.log(`you've been clicked!!`);
-
-  console.log(domEl.valueEmail.value);
-  console.log(domEl.valuePassword.value);
-  const loginEmail = domEl.valueEmail.value;
-  const loginPassword = domEl.valuePassword.value;
-
-  try {
-    const userCredential = await signInWithEmailAndPassword(
-      auth,
-      loginEmail,
-      loginEmailPassword
-    );
-    console.log(userCredential.user);
-  } catch (error) {
-    console.log(error);
-    showLoginError(error);
-  }
-};
-domEl.btnLogin.addEventListener('click', loginEmailPassword);
-
-const createUser = async () => {
-  console.log(`you've been clicked!!`);
-
-  console.log(domEl.valueEmail.value);
-  console.log(domEl.valuePassword.value);
-  const loginEmail = domEl.valueEmail.value;
-  const loginPassword = domEl.valuePassword.value;
-
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      auth,
-      loginEmail,
-      loginEmailPassword
-    );
-    console.log(userCredential.user);
-  } catch (error) {
-    console.log(error);
-    showLoginError(error);
-  }
-
-  //  const user = {
-  //    account: 'account',
-  //    accountNumber: 'accountNumber',
-  //    active: 'active',
-  //    email: 'email',
-  //    pin: 'pin',
-  //    uid: 'uid',
-  //    userName: 'userName',
-  //    userlmg: 'userlmg',
-  //  };
-  //
-  //  try {
-  //    const userRef = await addDoc(collection(db, 'users'), user);
-  //    console.log('Document written with ID: ', userRef.id);
-  //  } catch (e) {
-  //    console.error('Error adding document: ', e);
-  //  }
-  //
-  //  console.log(user);
-};
-
-domEl.btnSignup.addEventListener('click', createUser);
-
-const monitorAuthState = async () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log(user);
-
-      showApp();
-      showLoginState(user);
-
-      hideLoginError();
-    } else {
-      showLoginApp();
-    }
+signInWithEmailAndPassword(auth, domEl.valueEmail, domEl.valuePassword)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
   });
-};
 
-// Log out
-const logout = async () => {
-  await signOut(auth);
-};
+domEl.btnLogin.addEventListener('click', signInWithEmailAndPassword);
 
-monitorAuthState();
+domEl.btnSignup.addEventListener('click', () => {
+  console.log('clicked');
+  signInWithPopup(auth, googleAuthProvider).then((auth) => console.log(auth));
+  onAuthStateChanged();
+});
+
+domEl.btnLogout.addEventListener('click', () => {
+  signOut(auth).then(() => {
+    console.log('Logged out');
+    onAuthStateChanged();
+  });
+});
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    domEl.loginApp.classList.remove('show');
+    domEl.loginApp.classList.add('d-none');
+    domEl.containerApp.classList.remove('d-none');
+  } else {
+    domEl.loginApp.classList.remove('d-none');
+    domEl.loginApp.classList.add('show');
+    domEl.containerApp.classList.add('d-none');
+  }
+});
