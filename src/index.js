@@ -1,23 +1,20 @@
+import { addDoc, collection, doc, update, updateDoc } from 'firebase/firestore';
+import * as domEl from './js/helper/domElements';
+import { createDate, precioARS } from './js/helper/helperFunctions';
+import { fetchMovements, setNewMovement } from './js/firebase/fetchData';
+import { app, db } from './js/firebase/dbConfig';
+import {
+  AuthErrorCodes,
+  connectAuthEmulator,
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 import { async } from '@firebase/util';
-import {
-  addDoc,
-  arrayUnion,
-  collection,
-  doc,
-  FieldValue,
-  setDoc,
-  update,
-  updateDoc,
-  where,
-} from 'firebase/firestore';
-import * as domEl from '../src/js/helper/domElements';
-import { createDate, precioARS } from '../src/js/helper/helperFunctions';
-import {
-  fetchMovements,
-  setNewMovement,
-  updateUI,
-} from './js/firebase/fetchData';
-import { db } from './js/firebase/dbConfig';
+
+//import { auth } from './js/firebase/manageUsers';
 
 const activeAccount = '4UpnfRSWYGsvmmZP21Un';
 const accountNumber = 2654981998442;
@@ -190,7 +187,84 @@ domEl.btnExpense.addEventListener('click', function (e) {
 //  setNewMovement(newMovement);
 //});
 
+const auth = getAuth(app);
+//connectAuthEmulator(auth, 'http://localhost:5500');
+
+export const showLoginApp = () => {
+  domEl.loginApp.style.display = 'block';
+  domEl.containerApp.style.display = 'none';
+};
+
+export const showApp = () => {
+  domEl.loginApp.style.display = 'none';
+  domEl.containerApp.style.display = 'block';
+};
+
+export const hideLoginError = () => {
+  domEl.passwordInpValidation.style.display = 'none';
+  domEl.passwordInpValidation.innerHTML = '';
+};
+
+export const showLoginError = (error) => {
+  domEl.passwordInpValidation.style.display = 'block';
+  domEl.valuePassword.className = 'form-control bg-dark-2 is-invalid';
+
+  if (error.code == AuthErrorCodes.INVALID_PASSWORD) {
+    domEl.passwordInpValidation.innerHTML = 'Wrong password. Try again.';
+  } else {
+    console.log(`Error: ${error.message}`);
+    domEl.passwordInpValidation.innerHTML = `Wrong password. Try again.`;
+  }
+};
+
+export const showLoginState = (user) => {
+  console.log(`${user.displayName} (udi: ${user.uid}, email: ${user.email})`);
+};
+
+hideLoginError();
+
+const loginEmailPassword = async () => {
+  console.log(`you've been clicked!!`);
+
+  console.log(domEl.valueEmail.value);
+  console.log(domEl.valuePassword.value);
+  const loginEmail = domEl.valueEmail.value;
+  const loginPassword = domEl.valuePassword.value;
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginEmailPassword
+    );
+    console.log(userCredential.user);
+  } catch (error) {
+    console.log(error);
+    showLoginError(error);
+  }
+};
+domEl.btnLogin.addEventListener('click', loginEmailPassword);
+
 const createUser = async () => {
+  console.log(`you've been clicked!!`);
+
+  console.log(domEl.valueEmail.value);
+  console.log(domEl.valuePassword.value);
+  const loginEmail = domEl.valueEmail.value;
+  const loginPassword = domEl.valuePassword.value;
+
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginEmailPassword
+    );
+    console.log(userCredential.user);
+  } catch (error) {
+    console.log(error);
+    showLoginError(error);
+  }
+
   //  const user = {
   //    account: 'account',
   //    accountNumber: 'accountNumber',
@@ -212,4 +286,26 @@ const createUser = async () => {
   //  console.log(user);
 };
 
-const usersRef = db;
+domEl.btnSignup.addEventListener('click', createUser);
+
+const monitorAuthState = async () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(user);
+
+      showApp();
+      showLoginState(user);
+
+      hideLoginError();
+    } else {
+      showLoginApp();
+    }
+  });
+};
+
+// Log out
+const logout = async () => {
+  await signOut(auth);
+};
+
+monitorAuthState();

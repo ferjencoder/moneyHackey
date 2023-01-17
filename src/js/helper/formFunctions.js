@@ -1,4 +1,6 @@
+import { AuthErrorCodes } from 'firebase/auth';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
+import { passwordInpValidation } from './domElements';
 
 //import {db} from './fetchData';
 
@@ -19,4 +21,26 @@ export const onFormSubmit = ({ target }) => {
 //  const newMovementRef = doc(db, 'accounts', activeAccount);
 //  await updateDoc(newMovementRef, { movements: arrayUnion(newMovement) });
 //
+//};
+
+//const createUser = async () => {
+//  //  const user = {
+//  //    account: 'account',
+//  //    accountNumber: 'accountNumber',
+//  //    active: 'active',
+//  //    email: 'email',
+//  //    pin: 'pin',
+//  //    uid: 'uid',
+//  //    userName: 'userName',
+//  //    userlmg: 'userlmg',
+//  //  };
+//  //
+//  //  try {
+//  //    const userRef = await addDoc(collection(db, 'users'), user);
+//  //    console.log('Document written with ID: ', userRef.id);
+//  //  } catch (e) {
+//  //    console.error('Error adding document: ', e);
+//  //  }
+//  //
+//  //  console.log(user);
 //};

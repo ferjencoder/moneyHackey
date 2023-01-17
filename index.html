@@ -28,7 +28,9 @@
   </head>
   <body class="text-white">
     <main>
-      <section class="bg-dark-1 vh-100 modal-dialog modal-fullscreen">
+      <section
+        id="login-app"
+        class="bg-dark-1 vh-100 modal-dialog modal-fullscreen">
         <!-- Full screen modal -->
         <div class="bg-dark-1 modal-content pt-5">
           <div class="d-flex align-items-center justify-content-center">
@@ -43,41 +45,73 @@
               class="row align-items-center justify-content-center g-lg-5 py-5">
               <div class="col-md-10 mx-auto col-lg-5">
                 <form class="p-4 p-md-5 border rounded-3 bg-dark-2">
-                  <div class="form-floating mb-3">
-                    <input
-                      type="email"
-                      class="form-control bg-dark-2"
-                      id="floatingInput"
-                      placeholder="name@example.com" />
-                    <label for="floatingInput">Email address</label>
+                  <div class="form-floating mb-3 input-group has-validation">
+                    <label for="inp-login-email" class="form-label"
+                      >Email</label
+                    >
+                    <div class="input-group has-validation mb-4">
+                      <input
+                        type="email"
+                        class="form-control bg-dark-2"
+                        id="inp-login-email"
+                        placeholder="Email"
+                        aria-describedby="inp-login-email-feedback"
+                        required />
+                      <div
+                        id="inp-login-email-feedback"
+                        class="invalid-feedback">
+                        Please choose a registered email.
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-floating mb-3">
-                    <input
-                      type="password"
-                      class="form-control bg-dark-2"
-                      id="floatingPassword"
-                      placeholder="Password" />
-                    <label for="floatingPassword">Password</label>
+                  <div class="form-floating mb-3 input-group has-validation">
+                    <label for="inp-login-password" class="form-label"
+                      >Password</label
+                    >
+                    <div class="input-group has-validation">
+                      <input
+                        type="password"
+                        class="form-control bg-dark-2"
+                        id="inp-login-password"
+                        placeholder="Password"
+                        aria-describedby="inp-login-password-feedback"
+                        required />
+                      <div
+                        id="inp-login-password-feedback"
+                        class="invalid-feedback">
+                        Wrong password.
+                      </div>
+                    </div>
                   </div>
                   <div class="checkbox pt-4 py-3">
                     <label>
                       <input type="checkbox" value="remember-me" /> Remember me
                     </label>
                   </div>
-                  <button class="w-100 btn btn-lg btn-purple" type="submit">
-                    Sign up
+                  <button
+                    id="btn-login"
+                    class="w-100 btn btn-lg btn-purple"
+                    type="button">
+                    Sign in
                   </button>
                   <hr class="my-4" />
                   <small class="text-muted text-center"
-                    >By clicking Sign up, you agree to the terms of use.</small
+                    >You don't have an accound yet?.</small
                   >
+                  <button
+                    id="btn-signup"
+                    class="w-100 btn btn-lg btn-pink mt-4"
+                    type="button">
+                    Sign up
+                  </button>
+                  <!--<small class="text-muted text-center">By clicking Sign up, you agree to the terms of use.</small>-->
                 </form>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="d-none">
+      <section id="moneyTrackey-app" class="d-none">
         <div class="row w-100 m-0">
           <!-- LEFT SIDEBAR -->
           <div class="d-none d-xl-block col-xl-2 m-0 p-0">
@@ -212,7 +246,8 @@
               <h2 class="fs-2 pe-2 balance__value">$1</h2>
             </div>
             <!-- SECOND ROW - MOVEMENTS -->
-            <div class="container-movement">
+            <div id="movements-app">
+              <!--<div class="container-movement">-->
               <ul
                 class="list-group list-group-horizontal-sm bg-dark-2 text-white">
                 <li class="list-group-item p-0 border-0">

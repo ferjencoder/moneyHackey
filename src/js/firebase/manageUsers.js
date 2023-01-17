@@ -1,18 +1,17 @@
-import { app } from './dbConfig';
-import {
-  getAuth,
-  connectAuthEmulator,
-  signInWithEmailAndPassword,
-} from 'firebase/auth';
+//import { app } from './dbConfig';
+////import {
+////  getAuth,
+////  connectAuthEmulator,
+////  signInWithEmailAndPassword,
+////} from 'firebase/auth';
+//
+//import * as domEl from '../helper/domElements';
+//import { doc } from 'firebase/firestore';
+//import { async } from '@firebase/util';
 
-const auth = getAuth(app);
+//export const auth = getAuth(app);
 
-import * as domEl from '../src/js/helper/domElements';
-import { doc } from 'firebase/firestore';
-
-//domEl.signing.
-
-<button
+/*<button
   onC1ick={() => signInWithPopup(auth, new GoogleAuthProvider())}></button>;
 
 export const returnDocs = (snap) => {
@@ -24,5 +23,4 @@ export const returnDocs = (snap) => {
   });
   console.log(documents);
 
-  return documents;
-};
+  return documents;*/

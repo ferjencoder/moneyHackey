@@ -128,6 +128,7 @@ body {
   --bs-dark-2: #272727;
   --bs-dark-3: #373737;
   --bs-dark-4: #373737;
+  --bs-pink: #e52a72;
   --bs-purple: #915ff0;
   --bs-expense: #ffb003;
   --bs-installment: #dc3545;
@@ -143,6 +144,7 @@ body {
   --bs-dark-2-rgb: 39, 39, 39;
   --bs-dark-3-rgb: 55, 55, 55;
   --bs-dark-4-rgb: 55, 55, 55;
+  --bs-pink-rgb: 229, 42, 114;
   --bs-purple-rgb: 145, 95, 240;
   --bs-expense-rgb: 255, 176, 3;
   --bs-installment-rgb: 220, 53, 69;
@@ -3090,6 +3092,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #373737;
 }
 
+.btn-pink {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #e52a72;
+  --bs-btn-border-color: #e52a72;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #e94a87;
+  --bs-btn-hover-border-color: #e83f80;
+  --bs-btn-focus-shadow-rgb: 195, 36, 97;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ea558e;
+  --bs-btn-active-border-color: #e83f80;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #e52a72;
+  --bs-btn-disabled-border-color: #e52a72;
+}
+
 .btn-purple {
   --bs-btn-color: #000;
   --bs-btn-bg: #915ff0;
@@ -3342,6 +3361,23 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #373737;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #373737;
+  --bs-gradient: none;
+}
+
+.btn-outline-pink {
+  --bs-btn-color: #e52a72;
+  --bs-btn-border-color: #e52a72;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #e52a72;
+  --bs-btn-hover-border-color: #e52a72;
+  --bs-btn-focus-shadow-rgb: 229, 42, 114;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #e52a72;
+  --bs-btn-active-border-color: #e52a72;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #e52a72;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #e52a72;
   --bs-gradient: none;
 }
 
@@ -5052,6 +5088,15 @@ textarea.form-control-lg {
   color: #1a1a1a;
 }
 
+.alert-pink {
+  --bs-alert-color: #891944;
+  --bs-alert-bg: #fad4e3;
+  --bs-alert-border-color: #f7bfd5;
+}
+.alert-pink .alert-link {
+  color: #6e1436;
+}
+
 .alert-purple {
   --bs-alert-color: #573990;
   --bs-alert-bg: #e9dffc;
@@ -5532,6 +5577,20 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #212121;
   border-color: #212121;
+}
+
+.list-group-item-pink {
+  color: #891944;
+  background-color: #fad4e3;
+}
+.list-group-item-pink.list-group-item-action:hover, .list-group-item-pink.list-group-item-action:focus {
+  color: #891944;
+  background-color: #e1bfcc;
+}
+.list-group-item-pink.list-group-item-action.active {
+  color: #fff;
+  background-color: #891944;
+  border-color: #891944;
 }
 
 .list-group-item-purple {
@@ -7161,6 +7220,11 @@ textarea.form-control-lg {
   background-color: RGBA(55, 55, 55, var(--bs-bg-opacity, 1)) !important;
 }
 
+.text-bg-pink {
+  color: #000 !important;
+  background-color: RGBA(229, 42, 114, var(--bs-bg-opacity, 1)) !important;
+}
+
 .text-bg-purple {
   color: #000 !important;
   background-color: RGBA(145, 95, 240, var(--bs-bg-opacity, 1)) !important;
@@ -7256,6 +7320,13 @@ textarea.form-control-lg {
 }
 .link-dark-4:hover, .link-dark-4:focus {
   color: #2c2c2c !important;
+}
+
+.link-pink {
+  color: #e52a72 !important;
+}
+.link-pink:hover, .link-pink:focus {
+  color: #ea558e !important;
 }
 
 .link-purple {
@@ -7760,6 +7831,11 @@ textarea.form-control-lg {
 .border-dark-4 {
   --bs-border-opacity: 1;
   border-color: rgba(var(--bs-dark-4-rgb), var(--bs-border-opacity)) !important;
+}
+
+.border-pink {
+  --bs-border-opacity: 1;
+  border-color: rgba(var(--bs-pink-rgb), var(--bs-border-opacity)) !important;
 }
 
 .border-purple {
@@ -8659,6 +8735,11 @@ textarea.form-control-lg {
   color: rgba(var(--bs-dark-4-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-pink {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
+}
+
 .text-purple {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-purple-rgb), var(--bs-text-opacity)) !important;
@@ -8783,6 +8864,11 @@ textarea.form-control-lg {
 .bg-dark-4 {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-dark-4-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-pink {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-purple {
@@ -11567,8 +11653,8 @@ a:visited {
   color: rgb(100, 100, 100);
 }
 
-#floatingInput,
-#floatingPassword {
+#inp-login-email,
+#inp-login-password {
   border-radius: 0;
   border-bottom: 1px solid rgb(100, 100, 100);
 }

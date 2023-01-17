@@ -26,10 +26,7 @@ const activeUser = '7x6TAa7Zy3reySiw7hMk';
 //WORKS/////////////////////////////////////////////////////////
 
 export const fetchMovements = async (activeAccount) => {
-  console.log(activeAccount);
-
   const q = collection(db, `accounts/${activeAccount}/movements`);
-
   const querySnapshot = await getDocs(q);
 
   let movements = [];
@@ -40,26 +37,26 @@ export const fetchMovements = async (activeAccount) => {
   return movements;
 };
 
-export const fetchUsers = async (activeUser) => {
-  console.log(activeUser);
-
-  const q = collection(db, `users/${activeUser}`);
-
-  //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
-
-  const querySnapshot = await getDoc(q);
-
-  console.log(q);
-
-  let users = [];
-  querySnapshot.forEach((doc) => {
-    users.push(doc.data());
-  });
-  //updateUI();
-  return users;
-};
-
-fetchUsers(activeUser);
+//export const fetchUsers = async (activeUser) => {
+//  console.log(activeUser);
+//
+//  const q = collection(db, `users`);
+//
+//  //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
+//
+//  const querySnapshot = await getDoc(q);
+//
+//  console.log(q);
+//
+//  let users = [];
+//  querySnapshot.forEach((doc) => {
+//    users.push(doc.data());
+//  });
+//  //updateUI();
+//  //return users;
+//};
+//
+//fetchUsers(activeUser);
 
 export const setNewMovement = async (newMovement, db, activeAccount) => {
   const newMovementRef = await addDoc(
