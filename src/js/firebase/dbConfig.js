@@ -1,8 +1,14 @@
 //require('dotenv').config();
+//import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+//dotenv.config();
+//console.log(process.env);
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import 'firebase/firestore';
-//
+
+//require('dotenv').config();
+//console.log(process.env);
+
 //const API_KEY_NAME = process.env.API_KEY_NAME;
 //const API_KEY_VALUE = process.env.API_KEY_VALUE;
 //const APP_ID_NAME = process.env.APP_ID_NAME;

@@ -14,9 +14,6 @@ import {
   signInWithPopup,
   signOut,
 } from 'firebase/auth';
-import { async } from '@firebase/util';
-
-//import { auth } from './js/firebase/manageUsers';
 
 const activeAccount = '4UpnfRSWYGsvmmZP21Un';
 const accountNumber = 2654981998442;
@@ -294,11 +291,14 @@ const auth = getAuth(app);
 
 const googleAuthProvider = new GoogleAuthProvider();
 
-signInWithEmailAndPassword(auth, domEl.valueEmail, domEl.valuePassword)
+signInWithEmailAndPassword(
+  auth,
+  domEl.valueEmail.value,
+  domEl.valuePassword.value
+)
   .then((userCredential) => {
     // Signed in
     const user = userCredential.user;
-    // ...
   })
   .catch((error) => {
     const errorCode = error.code;
