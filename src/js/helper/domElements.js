@@ -8,9 +8,9 @@ export const passwordInpValidation = document.getElementById(
 export const messageInvalidFeedback =
   document.getElementById('invalid-feedback');
 
-//export const labelWelcome = document.querySelector('.welcome');
-
-//export const labelDate = document.querySelector('.date');
+export const userName = document.getElementById('user-name');
+export const userImgURL = document.getElementById('user-img');
+export const userEmail = document.getElementById('user-email');
 export const labelBalance = document.querySelector('.balance__value');
 //export const labelSumIn = document.querySelector('.summary__value--in');
 //export const labelSumOut = document.querySelector('.summary__value--out');
@@ -37,13 +37,10 @@ export const btnLogout = document.querySelector('#btn-logout');
 export const btnSignup = document.querySelector('#btn-signup');
 export const valueEmail = document.querySelector('#inp-login-email');
 export const valuePassword = document.querySelector('#inp-login-password');
-//export const btnTransfer = document.querySelector('.form__btn--transfer');
-//export const btnLoan = document.querySelector('.form__btn--loan');
-//export const btnClose = document.querySelector('.form__btn--close');
-//export const btnSort = document.querySelector('.btn--sort');
 
-//export const inputLoginUsername = document.querySelector('.login__input--user');
-//export const inputLoginPin = document.querySelector('.login__input--pin');
+export const btnExpenseSmallBar = document.getElementById(
+  'sideBar-smallBar-btnExpense'
+);
 
 export const inputExpenseMoney = document.querySelector(
   '.expense__input--money'

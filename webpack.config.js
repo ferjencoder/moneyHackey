@@ -1,7 +1,10 @@
 //node_modules/.bin/webpack
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+console.log(path);
+
+const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // The entry point file described above
@@ -11,11 +14,12 @@ module.exports = {
   entry: './src/index.js',
   // The location of the build folder described above
   output: {
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
   },
   watch: true,
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './index.html',
     }),

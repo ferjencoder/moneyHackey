@@ -1,9 +1,10 @@
 import { collection, getDoc, getDocs, addDoc } from 'firebase/firestore';
-import { db } from './dbConfig';
+import { displayMoneyTrack, balanceTotal } from '../..';
+import { db, auth } from './dbConfig';
 
-const activeAccount = '4UpnfRSWYGsvmmZP21Un';
-const accountNumber = 2654981998442;
-const activeUser = '7x6TAa7Zy3reySiw7hMk';
+//const activeAccount = '4UpnfRSWYGsvmmZP21Un';
+//const accountNumber = 2654981998442;
+//const activeUser = '7x6TAa7Zy3reySiw7hMk';
 
 //* Read movements from db
 //const activeAccount = 'PipgqG76If0CiGua1zMF';
@@ -25,15 +26,16 @@ const activeUser = '7x6TAa7Zy3reySiw7hMk';
 //};
 //WORKS/////////////////////////////////////////////////////////
 
-export const fetchMovements = async (activeAccount) => {
-  const q = collection(db, `accounts/${activeAccount}/movements`);
+export const fetchMovements = async (activeUser) => {
+  const q = collection(db, `users/${activeUser}/movements`);
   const querySnapshot = await getDocs(q);
 
   let movements = [];
   querySnapshot.forEach((doc) => {
     movements.push(doc.data());
   });
-  //updateUI();
+
+  displayMoneyTrack(movements);
   return movements;
 };
 
@@ -57,15 +59,6 @@ export const fetchMovements = async (activeAccount) => {
 //};
 //
 //fetchUsers(activeUser);
-
-export const setNewMovement = async (newMovement, db, activeAccount) => {
-  const newMovementRef = await addDoc(
-    collection(db, `accounts/${activeAccount}/movements`),
-    {
-      ...newMovement,
-    }
-  );
-};
 
 //export const updateUI = async (activeAccount) => {
 //  await fetchMovements(activeAccount)

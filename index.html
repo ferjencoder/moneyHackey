@@ -23,7 +23,7 @@
       src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="./dist/css/style.css" />
-    <script type="module" src="./dist/bundle.js"></script>
+    <script type="module" src="./dist/main.js"></script>
     <title>moneyHackey</title>
   </head>
   <body class="text-white bg-dark-1">
@@ -44,9 +44,10 @@
             <div
               class="row align-items-center justify-content-center g-lg-5 py-5">
               <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3 bg-dark-2">
-                  <div class="form-floating mb-3 input-group has-validation">
-                    <label for="inp-login-email" class="form-label"
+                <form
+                  class="d-flex flex-column p-3 p-md-5 border rounded-3 bg-dark-2 align-items-center">
+                  <div class="mb-3 input-group has-validation">
+                    <label for="inp-login-email" class="form-label mb-0"
                       >Email</label
                     >
                     <div class="input-group has-validation mb-4">
@@ -54,7 +55,6 @@
                         type="email"
                         class="form-control bg-dark-2"
                         id="inp-login-email"
-                        placeholder="Email"
                         aria-describedby="inp-login-email-feedback"
                         required />
                       <div
@@ -64,8 +64,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-floating mb-3 input-group has-validation">
-                    <label for="inp-login-password" class="form-label"
+                  <div class="mb-3 input-group has-validation">
+                    <label for="inp-login-password" class="form-label mb-0"
                       >Password</label
                     >
                     <div class="input-group has-validation">
@@ -73,7 +73,6 @@
                         type="password"
                         class="form-control bg-dark-2"
                         id="inp-login-password"
-                        placeholder="Password"
                         aria-describedby="inp-login-password-feedback"
                         required />
                       <div
@@ -83,28 +82,50 @@
                       </div>
                     </div>
                   </div>
-                  <div class="checkbox pt-4 py-3">
-                    <label>
-                      <input type="checkbox" value="remember-me" /> Remember me
-                    </label>
-                  </div>
                   <button
                     id="btn-login"
-                    class="w-100 btn btn-lg btn-purple"
+                    class="btn btn-lg btn-pink mt-3 mb-2 fs-6 fw-bolder"
                     type="button">
-                    Sign in
+                    <i class="bi bi-envelope"></i> Sign in with Email
                   </button>
-                  <hr class="my-4" />
+                  <hr class="w-100 my-4 border border-pink border-1" />
                   <small class="text-muted text-center"
                     >You don't have an accound yet?.</small
                   >
                   <button
                     id="btn-signup"
-                    class="w-100 btn btn-lg btn-pink mt-4"
+                    class="btn btn-lg btn-light mt-4 fs-6"
                     type="button">
-                    Sign up
+                    <!--<i class="bi bi-google"></i>-->
+                    <svg
+                      class="css-no0zdi eu4oa1w0"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M17.64 9.20455C17.64 8.56637 17.5827 7.95273 17.4764 7.36364H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8195H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20455Z"
+                        fill="#4285F4"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8195L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z"
+                        fill="#34A853"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.96409 10.71C3.78409 10.17 3.68182 9.59318 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95818H0.957273C0.347727 6.17318 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957273 13.0418L3.96409 10.71Z"
+                        fill="#FBBC05"></path>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z"
+                        fill="#EA4335"></path>
+                    </svg>
+                    Sign in with Google
                   </button>
-                  <!--<small class="text-muted text-center">By clicking Sign up, you agree to the terms of use.</small>-->
                 </form>
               </div>
             </div>
@@ -124,12 +145,20 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
                   <img
+                    id="user-img"
                     src="https://github.com/mdo.png"
-                    alt=""
+                    alt="User Profile Image"
                     width="48"
                     height="48"
-                    class="rounded-circle me-2" />
-                  <strong>John Smith</strong>
+                    class="rounded-circle me-3" />
+                  <div class="d-flex flex-column">
+                    <strong id="user-name">John Smith</strong>
+                    <small
+                      ><p id="user-email" class="m-0 p-0">
+                        john.smith@example.com
+                      </p></small
+                    >
+                  </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
                   <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -151,19 +180,19 @@
                     class="nav-link bg-secondary active"
                     aria-current="page">
                     <i class="bi bi-cash me-2 possitive"></i>
-                    Money Trackey
+                    <small>Money Trackey</small>
                   </a>
                 </li>
                 <li class="nav-item mb-2">
                   <a href="#" class="nav-link bg-dark-2" aria-current="page">
                     <i class="bi bi-check2-circle me-2 text-info"></i>
-                    Tasks
+                    <small>Tasks</small>
                   </a>
                 </li>
                 <li class="nav-item mb-2">
                   <a href="#" class="nav-link bg-dark-2" aria-current="page">
                     <i class="bi bi-cart me-2 text-purple"></i>
-                    Shopping List
+                    <small>Shopping List</small>
                   </a>
                 </li>
               </ul>
@@ -181,7 +210,7 @@
               </ul>
             </div>
           </div>
-          <div class="d-xl-none col-1 m-0 p-0">
+          <div class="d-xl-none col-2 col-md-1 m-0 p-0">
             <div
               class="sidebar-left d-flex flex-column p-1 p-xl-4 bg-dark-2 text-white">
               <div class="dropdown">
@@ -209,19 +238,26 @@
               <ul class="nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-2">
                   <a
+                    id="sideBar-smallBar-btnExpense"
                     href="#"
-                    class="nav-link bg-secondary rounded-0 m-0 active"
+                    class="nav-link bg-secondary rounded-0 m-0 p-0 text-center active"
                     aria-current="page">
                     <i class="bi bi-cash possitive"></i>
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link bg-dark-2" aria-current="page">
+                  <a
+                    href="#"
+                    class="nav-link bg-secondary rounded-0 m-0 p-0 text-center active"
+                    aria-current="page">
                     <i class="bi bi-check2-circle text-info"></i>
                   </a>
                 </li>
                 <li class="nav-item mb-2">
-                  <a href="#" class="nav-link bg-dark-2" aria-current="page">
+                  <a
+                    href="#"
+                    class="nav-link bg-secondary rounded-0 m-0 p-0 text-center active"
+                    aria-current="page">
                     <i class="bi bi-cart text-purple"></i>
                   </a>
                 </li>
@@ -241,11 +277,17 @@
               </ul>
             </div>
           </div>
+
           <!-- MAIN -->
-          <div class="col-11 col-md-8 col-xl-8 p-5 bg-dark-1 text-white">
+          <div class="col-10 col-md-8 col-xl-8 p-5 bg-dark-1 text-white">
             <!-- FIRST ROW - BALANCE -->
             <div
-              class="d-flex text-white align-items-center justify-content-between">
+              class="d-flex flex-column text-white align-items-center justify-content-between d-md-none">
+              <h2 class="fs-5 ps-1">Current balance</h2>
+              <h2 class="fs-4 pe-2 balance__value">$1</h2>
+            </div>
+            <div
+              class="text-white align-items-center justify-content-between d-none d-md-flex">
               <h2 class="fs-4 ps-1">Current balance</h2>
               <h2 class="fs-2 pe-2 balance__value">$1</h2>
             </div>
@@ -342,7 +384,7 @@
             </div>
           </div>
           <!-- RIGHT SIDEBAR -->
-          <div class="d-none d-md-block col-md-3 col-xl-2 m-0 p-0">
+          <div class="col-md-3 col-xl-2 m-0 p-0">
             <div
               class="sidebar-left d-flex flex-column p-3 bg-dark-2 text-white">
               <div class="dropdown">
