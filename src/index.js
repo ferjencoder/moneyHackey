@@ -180,7 +180,7 @@ export const displayMoneyTrack = (movements = []) => {
   //Balance Total => sums all movements
 };
 
-const balanceTotal = (movements = []) => {
+const balanceTotal = (movements) => {
   let sum = 0;
   movements.map((movements) => {
     return (sum += movements.money);

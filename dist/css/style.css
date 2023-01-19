@@ -11615,6 +11615,7 @@ a:visited {
 #filterInputMoney,
 #filterInputCurrency,
 .expense__input {
+  font-size: 0.9rem;
   width: 100%;
   background-color: transparent;
   box-shadow: none;

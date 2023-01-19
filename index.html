@@ -191,8 +191,18 @@
                 </li>
                 <li class="nav-item mb-2">
                   <a href="#" class="nav-link bg-dark-2" aria-current="page">
-                    <i class="bi bi-cart me-2 text-purple"></i>
+                    <i class="bi bi-cart me-2 text-pink"></i>
                     <small>Shopping List</small>
+                  </a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a
+                    id="btn-code-gen"
+                    href="#"
+                    class="nav-link bg-dark-2"
+                    aria-current="page">
+                    <i class="bi bi-code-slash me-2 text-warning"></i>
+                    <small>Code Gen</small>
                   </a>
                 </li>
               </ul>
@@ -385,7 +395,7 @@
             </div>
           </div>
           <!-- RIGHT SIDEBAR -->
-          <div class="col-md-3 col-xl-2 m-0 p-0">
+          <div class="col-md-3 col-xl-2 m-0 p-0 d-none">
             <div
               class="sidebar-left d-flex flex-column p-3 bg-dark-2 text-white">
               <div class="dropdown">
@@ -421,7 +431,7 @@
                   <form class="mb-1 text-white">
                     <div class="row bg-dark-2">
                       <div class="col align-items-center text-white bg-dark-2">
-                        <div class="form-floating">
+                        <div>
                           <input
                             class="form-control mb-3 expense__input expense__input--date"
                             name="date"
@@ -436,22 +446,20 @@
                             placeholder="money"
                             aria-label="input money" />
                         </div>
-                        <div class="form-floating">
+                        <div>
                           <input
                             class="form-control mb-3 expense__input expense__input--category"
                             type="text"
                             placeholder="category"
                             aria-label="input category" />
-                          <label for="category">category</label>
                         </div>
-                        <div class="form-floating">
+                        <div>
                           <input
                             class="form-control mb-3 expense__input expense__input--place"
                             type="text"
                             name="place"
                             placeholder="place"
                             aria-label="input place" />
-                          <label for="place">place</label>
                         </div>
                         <div>
                           <input
@@ -470,9 +478,9 @@
                             placeholder="currency"
                             aria-label="input currency" />
                           <datalist id="datalistOptions">
-                            <option value="ARS"></option>
-                            <option value="USD"></option>
-                            <option value="EUR"></option>
+                            <option value="ARS">ARS</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
                           </datalist>
                           <textarea
                             class="form-control mb-3 expense__input expense__input--comment"
@@ -494,6 +502,43 @@
                   </form>
                 </li>
               </ul>
+            </div>
+          </div>
+
+          <!-- OFFCANVAS RIGHT SIDEBAR -->
+          <button
+            class="btn btn-primary d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasResponsive"
+            aria-controls="offcanvasResponsive">
+            Toggle offcanvas
+          </button>
+
+          <div class="alert alert-info d-none d-lg-block">
+            Resize your browser to show the responsive offcanvas toggle.
+          </div>
+
+          <div
+            class="offcanvas-lg offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasResponsive"
+            aria-labelledby="offcanvasResponsiveLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">
+                Responsive offcanvas
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#offcanvasResponsive"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <p class="mb-0">
+                This is content within an <code>.offcanvas-lg</code>.
+              </p>
             </div>
           </div>
         </div>

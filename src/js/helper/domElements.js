@@ -10,15 +10,9 @@ export const messageInvalidFeedback =
 
 export const userName = document.getElementById('user-name');
 export const userImgURL = document.getElementById('user-img');
-export const userImgURLSm = document.getElementById('user-img-sm');
+export const userImgURLSmBar = document.getElementById('user-img-sm');
 export const userEmail = document.getElementById('user-email');
 export const labelBalance = document.querySelector('.balance__value');
-//export const labelSumIn = document.querySelector('.summary__value--in');
-//export const labelSumOut = document.querySelector('.summary__value--out');
-//export const labelSumInterest = document.querySelector(
-//  '.summary__value--interest'
-//);
-//export const labelTimer = document.querySelector('.timer');
 
 export const loginApp = document.querySelector('#login-app');
 export const containerApp = document.querySelector('#moneyTrackey-app');
@@ -31,7 +25,7 @@ export const ulMovementComment = document.getElementById('comment');
 export const ulMovementMoney = document.getElementById('money');
 export const ulMovementcurrency = document.getElementById('currency');
 
-export const table = document.getElementById('movements-table');
+export const btnCodeGen = document.getElementById('btn-code-gen');
 
 export const btnLogin = document.querySelector('#btn-login');
 export const btnLogout = document.querySelector('#btn-logout');
@@ -74,9 +68,3 @@ export const inputIncomeComment = document.querySelector(
   '.income__input--comment'
 );
 export const btnIncome = document.querySelector('.btn-income');
-
-//export const inputLoanAmount = document.querySelector(
-//  '.form__input--loan-amount'
-//);
-//export const inputCloseUsername = document.querySelector('.form__input--user');
-//export const inputClosePin = document.querySelector('.form__input--pin');

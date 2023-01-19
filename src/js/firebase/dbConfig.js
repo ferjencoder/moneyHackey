@@ -1,25 +1,21 @@
 import { initializeApp } from 'firebase/app';
 import {
+  addDoc,
   collection,
-  doc,
-  getDoc,
-  getDocs,
   getFirestore,
-  orderBy,
-  query,
-  where,
+  doc,
+  setDoc,
+  getDoc,
+  onSnapShot,
 } from 'firebase/firestore';
-import 'firebase/firestore';
 import * as domEl from '../helper/domElements';
-//import { config } from 'dotenv';
 import {
-  createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
-  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  getFirebase,
 } from 'firebase/auth';
 import { fetchMovements } from './fetchData';
 import { createDate } from '../helper/helperFunctions';
@@ -57,157 +53,82 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
+onAuthStateChanged(auth, (user) => {});
 
 const googleAuthProvider = new GoogleAuthProvider();
-
-//domEl.btnSignup.innerHTML = `
-//FcGoogle
-//`;
-
-//INFO desde aquí
-//const email = domEl.valueEmail.value;
-//const password = domEl.valuePassword.value;
-//
-//domEl.btnLogin.addEventListener('click', signInWithEmailAndPassword);
-//
-//createUserWithEmailAndPassword(
-//  auth,
-//  domEl.valueEmail.value,
-//  domEl.valuePassword.value
-//)
-//  .then((userCredential) => {
-//    // Signed in
-//    console.log(domEl.valueEmail.value);
-//    console.log(domEl.valuePassword.value);
-//
-//    const user = userCredential.user;
-//    console.log(user);
-//  })
-//  .catch((error) => {
-//    const errorCode = error.code;
-//    const errorMessage = error.message;
-//    console.log(errorMessage);
-//  });
-//
-//signInWithEmailAndPassword(auth, email, password)
-//  .then((userCredential) => {
-//    // Signed in
-//    const user = userCredential.user;
-//    console.log(user);
-//  })
-//  .catch((error) => {
-//    const errorCode = error.code;
-//    const errorMessage = error.message;
-//  });
-//INFO hasta aquí
-
-//FUNCIONA
-//domEl.btnSignup.addEventListener('click', () => {
-//  console.log('clicked');
-//  signInWithPopup(auth, googleAuthProvider)
-//    .then((auth) => console.log(auth))
-//    .then((auth) => console.log(auth.userCredential.displayName))
-//    .then(console.log(userCredential.user['displayName']));
-//  console.log(JSON.stringify(auth.authImpl.currentUser.photoURL));
-//  console.log(JSON.stringify(auth.authImpl.currentUser.uid));
-//  onAuthStateChanged();
-//});
 
 const userData = (activeUser, userEmail, userDisplayName, userPhotoURL) => {
   domEl.userName.textContent = userDisplayName;
   domEl.userEmail.textContent = userEmail;
   domEl.userImgURL.src = userPhotoURL;
-  domEl.userImgURLSm.src = userPhotoURL;
-  console.log(activeUser);
+  domEl.userImgURLSmBar.src = userPhotoURL;
   updateUI(activeUser);
+  return activeUser;
 };
 
-//async function queryCollection() {
-//  const q = await query(db);
-//}
+const checkIfUser = async (
+  activeUser,
+  userEmail,
+  userDisplayName,
+  userPhotoURL
+) => {
+  const docRef = doc(db, 'users', activeUser);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log('user in db');
+  } else {
+    setDoc(doc(db, 'users', activeUser), {
+      email: userEmail,
+      name: userDisplayName,
+      userPhotoURL: userPhotoURL,
+      uid: activeUser,
+    });
+  }
+
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      domEl.loginApp.classList.add('d-none');
+      domEl.containerApp.classList.remove('d-none');
+      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
+      showMoneyTrack(activeUser);
+    } else {
+      domEl.loginApp.classList.remove('d-none');
+      domEl.containerApp.classList.add('d-none');
+    }
+  });
+};
 
 const googleSignIn = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleAuthProvider);
-    const activeUser = result.user.uid;
-    const userEmail = result.user.email;
-    const userDisplayName = result.user.displayName;
-    const userPhotoURL = result.user.photoURL;
+  signInWithPopup(auth, googleAuthProvider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      //const token = credential.accessToken;
 
-    //const collectionRef = collection(db, 'users');
-    //const q = await query(collectionRef, where('uid', '==', activeUser));
+      // The signed-in user info.
+      const user = result.user;
+      const activeUser = user.uid;
+      const userEmail = user.email;
+      const userDisplayName = user.displayName;
+      const userPhotoURL = user.photoURL;
 
-    const docRef = doc(db, 'users', activeUser);
-    const docSnap = await getDoc(docRef);
-    console.log(docSnap);
-
-    if (docSnap.exists()) {
-      console.log('Document data => ', docSnap.data());
-      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
-    } else {
-      console.log('no such user');
-    }
-
-    return activeUser;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const activeUserLoggedIn = (activeUser) => {
-  if (!activeUser) return;
-
-  if (activeUser) {
-    showMoneyTrack(activeUser);
-  }
+      checkIfUser(activeUser, userEmail, userDisplayName, userPhotoURL);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+    });
 };
 
 domEl.btnSignup.addEventListener('click', googleSignIn);
 
-//  .then(console.log(auth))
-//  .then(console.log(googleSignIn.user))
-//  .then(console.log(userCredential.user['displayName']));
-//console.log(JSON.stringify(auth.authImpl.currentUser.photoURL));
-//console.log(JSON.stringify(auth.authImpl.currentUser.uid));
-
-//const googleLogin = async () => {
-//  try {
-//    const result = await signInWithPopup(auth, googleAuthProvider);
-//    console.log(result.user);
-//  } catch (error) {
-//    console.log(error);
-//  }
-//};
-//
-//domEl.btnSignup.addEventListener('click', googleLogin);
-
-//domEl.btnSignup.addEventListener('click', () => {
-//  console.log('clicked');
-//  signInWithPopup(auth, googleAuthProvider)
-//    .then((auth) => console.log(auth))
-//    .then((auth) => console.log(auth.userCredential.displayName))
-//    .then(console.log(userCredential.user['displayName']));
-//  console.log(JSON.stringify(auth.authImpl.currentUser.photoURL));
-//  console.log(JSON.stringify(auth.authImpl.currentUser.uid));
-//  onAuthStateChanged();
-//});
-
 domEl.btnLogout.addEventListener('click', () => {
   signOut(auth).then(() => {
     console.log('Logged out');
-    //onAuthStateChanged(auth);
   });
 });
-
-//onAuthStateChanged(auth, (user) => {
-//  if (user) {
-//    domEl.loginApp.classList.add('d-none');
-//    domEl.containerApp.classList.remove('d-none');
-//  } else {
-//    domEl.loginApp.classList.remove('d-none');
-//    domEl.containerApp.classList.add('d-none');
-//  }
-//});
 
 const showMoneyTrack = (activeUser) => {
   if (activeUser) {
@@ -221,29 +142,31 @@ const showMoneyTrack = (activeUser) => {
 
 export const updateUI = (activeUser) => {
   fetchMovements(activeUser);
-  //displayMovements(newMovement, ...movements);
-  //balanceTotal(newMovement, ...movements);
 };
 
-export const setNewMovement = async (newMovement, db, activeUser) => {
-  const newMovementRef = await addDoc(
-    collection(db, `users/${activeUser}/movements`),
+const createMovement = async (newMovement) => {
+  const auth = getAuth(app);
+  const activeUser = auth.currentUser.uid;
+
+  const docRef = await addDoc(
+    collection(db, 'users', activeUser, 'moneyTracker'),
     {
       ...newMovement,
     }
   );
+
   updateUI(activeUser);
 };
 
-domEl.btnExpense.addEventListener('click', function (e) {
+export const setNewMovement = (e) => {
   e.preventDefault();
-  let categoryEl = domEl.inputExpenseCategory.value;
-  let commentEl = domEl.inputExpenseComment.value;
-  let currencyEl = domEl.inputExpenseCurrency.value;
   let dateEl = createDate(domEl.inputExpenseDate.value);
   let moneyEl = -Number(domEl.inputExpenseMoney.value);
-  let paymentsEl = domEl.inputExpensePayments.value;
+  let categoryEl = domEl.inputExpenseCategory.value;
   let placeEl = domEl.inputExpensePlace.value;
+  let paymentsEl = domEl.inputExpensePayments.value;
+  let currencyEl = domEl.inputExpenseCurrency.value;
+  let commentEl = domEl.inputExpenseComment.value;
 
   const newMovement = {
     category: categoryEl,
@@ -255,8 +178,6 @@ domEl.btnExpense.addEventListener('click', function (e) {
     place: placeEl,
   };
 
-  setNewMovement(newMovement, db, activeUser);
-
   domEl.inputExpenseCategory.value = '';
   domEl.inputExpenseComment.value = '';
   domEl.inputExpenseCurrency.value = '';
@@ -264,4 +185,15 @@ domEl.btnExpense.addEventListener('click', function (e) {
   domEl.inputExpenseMoney.value = '';
   domEl.inputExpensePayments.value = '';
   domEl.inputExpensePlace.value = '';
-});
+  createMovement(newMovement);
+};
+
+domEl.btnExpense.addEventListener('click', setNewMovement);
+
+export function onAuth(fn) {
+  return onAuthStateChanged(auth, (user) => {
+    fn(user);
+    domEl.loginApp.classList.add('d-none');
+    domEl.containerApp.classList.remove('d-none');
+  });
+}
