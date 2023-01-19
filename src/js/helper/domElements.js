@@ -10,6 +10,7 @@ export const messageInvalidFeedback =
 
 export const userName = document.getElementById('user-name');
 export const userImgURL = document.getElementById('user-img');
+export const userImgURLSm = document.getElementById('user-img-sm');
 export const userEmail = document.getElementById('user-email');
 export const labelBalance = document.querySelector('.balance__value');
 //export const labelSumIn = document.querySelector('.summary__value--in');

@@ -1,5 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+  where,
+} from 'firebase/firestore';
 import 'firebase/firestore';
 import * as domEl from '../helper/domElements';
 //import { config } from 'dotenv';
@@ -108,9 +117,14 @@ const userData = (activeUser, userEmail, userDisplayName, userPhotoURL) => {
   domEl.userName.textContent = userDisplayName;
   domEl.userEmail.textContent = userEmail;
   domEl.userImgURL.src = userPhotoURL;
+  domEl.userImgURLSm.src = userPhotoURL;
   console.log(activeUser);
   updateUI(activeUser);
 };
+
+//async function queryCollection() {
+//  const q = await query(db);
+//}
 
 const googleSignIn = async () => {
   try {
@@ -120,13 +134,32 @@ const googleSignIn = async () => {
     const userDisplayName = result.user.displayName;
     const userPhotoURL = result.user.photoURL;
 
-    userData(activeUser, userEmail, userDisplayName, userPhotoURL);
-    showMoneyTrack(activeUser);
+    //const collectionRef = collection(db, 'users');
+    //const q = await query(collectionRef, where('uid', '==', activeUser));
+
+    const docRef = doc(db, 'users', activeUser);
+    const docSnap = await getDoc(docRef);
+    console.log(docSnap);
+
+    if (docSnap.exists()) {
+      console.log('Document data => ', docSnap.data());
+      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
+    } else {
+      console.log('no such user');
+    }
+
     return activeUser;
   } catch (error) {
     console.log(error);
   }
-  return userEmail;
+};
+
+const activeUserLoggedIn = (activeUser) => {
+  if (!activeUser) return;
+
+  if (activeUser) {
+    showMoneyTrack(activeUser);
+  }
 };
 
 domEl.btnSignup.addEventListener('click', googleSignIn);
@@ -231,6 +264,4 @@ domEl.btnExpense.addEventListener('click', function (e) {
   domEl.inputExpenseMoney.value = '';
   domEl.inputExpensePayments.value = '';
   domEl.inputExpensePlace.value = '';
-
-  //! Cuidado
 });
