@@ -197,6 +197,18 @@ $caret-width: 0;
 $caret-vertical-align: 0;
 $caret-spacing: 0;
 
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem,
+  7: 1.5rem,
+  8: 1rem,
+  9: 0.85rem,
+);
+
 /* DARK MODE */
 //$navbar-dark-color: rgba($white, .55);
 //$navbar-dark-hover-color: rgba($white, .75);

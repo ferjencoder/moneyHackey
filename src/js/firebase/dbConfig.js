@@ -88,9 +88,9 @@ const checkIfUser = async (
 
   onAuthStateChanged(auth, (user) => {
     if (user != null) {
+      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
       domEl.loginApp.classList.add('d-none');
       domEl.containerApp.classList.remove('d-none');
-      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
       showMoneyTrack(activeUser);
     } else {
       domEl.loginApp.classList.remove('d-none');
