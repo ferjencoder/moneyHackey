@@ -58,10 +58,10 @@ onAuthStateChanged(auth, (user) => {});
 const googleAuthProvider = new GoogleAuthProvider();
 
 const userData = (activeUser, userEmail, userDisplayName, userPhotoURL) => {
-  domEl.userName.textContent = userDisplayName;
-  domEl.userEmail.textContent = userEmail;
-  domEl.userImgURL.src = userPhotoURL;
-  domEl.userImgURLSmBar.src = userPhotoURL;
+  //domEl.userName.textContent = userDisplayName;
+  //domEl.userEmail.textContent = userEmail;
+  //domEl.userImgURL.src = userPhotoURL;
+  //domEl.userImgURLSmBar.src = userPhotoURL;
   updateUI(activeUser);
   return activeUser;
 };

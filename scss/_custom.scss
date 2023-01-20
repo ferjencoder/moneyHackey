@@ -2,13 +2,13 @@
   --bs-blue: #0d7dfd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
-  --bs-pink: #e52a72;
+  --bs-pink: #f5b6c2;
   --bs-red: #dc3545;
   --bs-orange: #ffb003;
   --bs-yellow: #ffcb03;
-  --bs-green: #39b385;
+  --bs-green: #9ad2ba;
   --bs-teal: #5de17e;
-  --bs-cyan: #0dcaf0;
+  --bs-cyan: #8bd3ce;
   --bs-white: #fff;
   --bs-gray: rgb(108, 117, 125);
   --bs-gray-dark: rgb(52, 58, 64);
@@ -21,10 +21,10 @@
   --bs-gray-700: rgb(73, 80, 87);
   --bs-gray-800: rgb(52, 58, 64);
   --bs-gray-900: rgb(33, 37, 41);
-  --bs-primary: #e52a72;
+  --bs-primary: #f5b6c2;
   --bs-secondary: #6f42c1;
-  --bs-success: #39b385;
-  --bs-info: #0dcaf0;
+  --bs-success: #9ad2ba;
+  --bs-info: #8bd3ce;
   --bs-warning: #ffb003;
   --bs-danger: #dc3545;
   --bs-light: rgb(248, 249, 250);
@@ -84,25 +84,25 @@ $font-family-sans-serif: // Cross-platform generic font family (default user int
 $blue: #0d7dfd;
 $indigo: #6610f2;
 $purple: #915ff0;
-$pink: #e52a72;
+$pink: #f5b6c2;
 $red: #dc3545;
 $orange: #ffb003;
 $yellow: #ffcb03;
-$green: #39b385;
-$teal: #5de17e;
-$cyan: #0dcaf0;
+$green: #9ad2ba;
+$teal: #9ad2ba;
+$cyan: #a0cbf1;
 $expense: #ffb003;
 $installment: #dc3545;
-$income: #39b385;
+$income: #9ad2ba;
 
 $primary: $blue ;
 $secondary: #333;
-$success: #39b385;
+$success: #9ad2ba;
 $info: $cyan ;
 $warning: $yellow ;
 $danger: $red ;
 $light: #f8f9fa;
-$pink: #e52a72;
+$pink: #f5b6c2;
 $purple: #915ff0;
 $dark: #1c1c1c;
 $dark-2: #272727;
@@ -162,6 +162,7 @@ $theme-colors: (
 /* CLOSE BUTTON */
 $btn-close-focus-shadow: none;
 
+
 /* FONTS */
 $font-family-sans-serif: "Public Sans", sans-serif;
 
@@ -197,6 +198,7 @@ $caret-width: 0;
 $caret-vertical-align: 0;
 $caret-spacing: 0;
 
+/* FONTS */
 $display-font-sizes: (
   1: 5rem,
   2: 4.5rem,
@@ -208,6 +210,9 @@ $display-font-sizes: (
   8: 1rem,
   9: 0.85rem,
 );
+
+/* OFFCANVAS */
+$offcanvas-horizontal-width: 312px;
 
 /* DARK MODE */
 //$navbar-dark-color: rgba($white, .55);
