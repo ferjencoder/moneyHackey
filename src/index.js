@@ -185,7 +185,9 @@ const balanceTotal = (movements) => {
   movements.map((movements) => {
     return (sum += movements.money);
   });
-  domEl.labelBalance.innerHTML = `${precioARS(sum)}`;
+  console.log(precioARS(sum));
+
+  domEl.labelBalance.textContent = `${precioARS(sum)}`;
 };
 
 const arsToUsdBlue = 355;
