@@ -33,6 +33,14 @@
 }
 
 
+#btn-hamburger-flip {
+  transition: transform .25s, opacity .25s;
+
+  &:hover {
+    color: red;
+    transform: rotate(90deg);
+  }
+}
 
 
 .drop-top {

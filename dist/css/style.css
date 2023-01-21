@@ -11600,6 +11600,14 @@ textarea.form-control-lg {
   border-bottom: 1px solid rgb(100, 100, 100);
 }
 
+#btn-hamburger-flip {
+  transition: transform 0.25s, opacity 0.25s;
+}
+#btn-hamburger-flip:hover {
+  color: red;
+  transform: rotate(90deg);
+}
+
 .drop-top {
   border-top: 1px solid rgba(245, 245, 245, 0.3);
 }
