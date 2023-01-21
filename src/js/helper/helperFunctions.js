@@ -43,19 +43,19 @@ export const createDate = (now) => {
 //};
 
 //SEARCH LIST
-let filterInputDate = document.getElementById('filterInputDate');
-let filterInputCategory = document.getElementById('filterInputCategory');
-let filterInputPlace = document.getElementById('filterInputPlace');
-let filterInputComment = document.getElementById('filterInputComment');
-let filterInputMoney = document.getElementById('filterInputMoney');
-let filterInputCurrency = document.getElementById('filterInputCurrency');
+//let filterInputDate = document.getElementById('filterInputDate');
+//let filterInputCategory = document.getElementById('filterInputCategory');
+//let filterInputPlace = document.getElementById('filterInputPlace');
+//let filterInputComment = document.getElementById('filterInputComment');
+//let filterInputMoney = document.getElementById('filterInputMoney');
+//let filterInputCurrency = document.getElementById('filterInputCurrency');
 // Add event listener
-filterInputDate.addEventListener('keyup', filterDate);
-filterInputCategory.addEventListener('keyup', filterCategory);
-filterInputPlace.addEventListener('keyup', filterPlace);
-filterInputComment.addEventListener('keyup', filterComment);
-filterInputMoney.addEventListener('keyup', filterMoney);
-filterInputCurrency.addEventListener('keyup', filterCurrency);
+//filterInputDate.addEventListener('keyup', filterDate);
+//filterInputCategory.addEventListener('keyup', filterCategory);
+//filterInputPlace.addEventListener('keyup', filterPlace);
+//filterInputComment.addEventListener('keyup', filterComment);
+//filterInputMoney.addEventListener('keyup', filterMoney);
+//filterInputCurrency.addEventListener('keyup', filterCurrency);
 
 function filterDate() {
   // Get value of input

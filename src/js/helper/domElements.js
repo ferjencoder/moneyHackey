@@ -12,11 +12,12 @@ export const userName = document.getElementById('user-name');
 export const userImgURL = document.getElementById('user-img');
 export const userImgURLSmBar = document.getElementById('user-img-sm');
 export const userEmail = document.getElementById('user-email');
-export const labelBalance = document.querySelector('.balance__value');
+export const labelBalance = document.querySelectorAll('.balance__value');
 
 export const loginApp = document.querySelector('#login-app');
-export const containerApp = document.querySelector('#moneyTrackey-app');
+export const containerApp = document.querySelector('#container-app');
 export const movementsApp = document.querySelector('#movements-app');
+export const movementsList = document.querySelector('#movements-list');
 
 export const ulMovementDate = document.getElementById('date');
 export const ulMovementCategory = document.getElementById('category');

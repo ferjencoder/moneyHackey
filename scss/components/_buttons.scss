@@ -10,7 +10,39 @@
   color: white;
 }
 
+.btn-hover-3 {
+  width: 100%;
+  border-radius: 0.18rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  justify-content: center;
+  background-color: #272727;
+  border: 1px solid transparent;
+  color: white;
+
+  &:hover {
+    background-color: #333;
+    border: 1px solid transparent;
+
+  }
+}
+
 .btn-border-3 {
   border-radius: 0;
   border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+
+
+
+.drop-top {
+  border-top: 1px solid rgba(245, 245, 245, 0.3);
+}
+
+.list-item-money {
+  background-color: #2a2a2a;
+
+  &:hover {
+    background-color: #373737;
+  }
 }

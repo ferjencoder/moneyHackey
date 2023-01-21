@@ -2,3 +2,33 @@
   width: 1.7rem;
   height: 1.7rem;
 }
+
+#sidebar-left-search::placeholder {
+  color: rgba(245, 245, 245, 0.3);
+  font-size: 0.85rem;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.input-search {
+  background-color: #333;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.3);
+
+  &:focus {
+    border-bottom: 1px solid rgba(245, 245, 245, 0.3);
+    background-color: #373737;
+  }
+
+}
+
+.btn-search {
+  background-color: #333;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.3);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #505050;
+  }
+}

@@ -16,6 +16,7 @@ import {
   signInWithPopup,
   signOut,
   getFirebase,
+  browserSessionPersistence,
 } from 'firebase/auth';
 import { fetchMovements } from './fetchData';
 import { createDate } from '../helper/helperFunctions';
@@ -53,14 +54,33 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-onAuthStateChanged(auth, (user) => {});
 
 const googleAuthProvider = new GoogleAuthProvider();
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const activeUser = user.uid;
+    const userEmail = user.email;
+    const userDisplayName = user.displayName;
+    const userPhotoURL = user.photoURL;
+
+    userData(activeUser, userEmail, userDisplayName, userPhotoURL);
+    domEl.loginApp.classList.add('d-none');
+    domEl.containerApp.classList.remove('d-none');
+    showMoneyTrack(activeUser);
+
+    // ...
+  } else {
+    console.log('user logged out');
+    domEl.loginApp.classList.remove('d-none');
+    domEl.containerApp.classList.add('d-none');
+  }
+});
+
 const userData = (activeUser, userEmail, userDisplayName, userPhotoURL) => {
-  //domEl.userName.textContent = userDisplayName;
-  //domEl.userEmail.textContent = userEmail;
-  //domEl.userImgURL.src = userPhotoURL;
+  domEl.userName.textContent = userDisplayName;
+  domEl.userEmail.textContent = userEmail;
+  domEl.userImgURL.src = userPhotoURL;
   //domEl.userImgURLSmBar.src = userPhotoURL;
   updateUI(activeUser);
   return activeUser;
@@ -86,17 +106,17 @@ const checkIfUser = async (
     });
   }
 
-  onAuthStateChanged(auth, (user) => {
-    if (user != null) {
-      userData(activeUser, userEmail, userDisplayName, userPhotoURL);
-      domEl.loginApp.classList.add('d-none');
-      domEl.containerApp.classList.remove('d-none');
-      showMoneyTrack(activeUser);
-    } else {
-      domEl.loginApp.classList.remove('d-none');
-      domEl.containerApp.classList.add('d-none');
-    }
-  });
+  //onAuthStateChanged(auth, (user) => {
+  //  if (user != null) {
+  //    userData(activeUser, userEmail, userDisplayName, userPhotoURL);
+  //    domEl.loginApp.classList.add('d-none');
+  //    domEl.containerApp.classList.remove('d-none');
+  //    showMoneyTrack(activeUser);
+  //  } else {
+  //    domEl.loginApp.classList.remove('d-none');
+  //    domEl.containerApp.classList.add('d-none');
+  //  }
+  //});
 };
 
 const googleSignIn = async () => {
