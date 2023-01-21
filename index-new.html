@@ -317,214 +317,212 @@
           </div>
         </nav>
 
-        <!-- NEW NAV -->
-        <nav>
-          <!-- ALLWAYS NAVBAR -->
+        <!-- LEFT NAVBAR -->
+        <nav class="navbar navbar-dark bg-dark-2 fixed-top">
           <div>
             <button
-              class="btn btn-secondary bg-transparent text-white"
+              class="btn btn-secondary bg-transparent text-white ps-5 pt-4"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#off-navbar-right"
               aria-controls="off-navbar-right">
               <i class="bi bi-list display-5"></i>
             </button>
-
-            <div
-              class="offcanvas offcanvas-start show bg-dark-2"
-              data-bs-scroll="true"
-              data-bs-backdrop="false"
-              tabindex="-1"
-              id="off-navbar-right"
-              aria-labelledby="off-navbar-rightLabel">
-              <div class="offcanvas-header">
-                <div class="offcanvas-title" id="off-navbar-rightLabel">
-                  <div class="dropdown-center p-3">
-                    <a
-                      href="#"
-                      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle fw-8"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      <img
-                        id="user-img"
-                        src="https://github.com/mdo.png"
-                        alt="User Profile Image"
-                        width="48"
-                        height="48"
-                        class="rounded-circle me-3" />
-                      <div class="d-flex flex-column">
-                        <strong id="user-name" class="display-7 mb-1"
-                          >John Smith</strong
-                        >
-                        <small class="d-flex align-items-center">
-                          <p id="user-email" class="display-9 m-0 p-0 pe-1">
-                            john.smith@example.com
-                          </p>
-                          <span>▼</span>
-                        </small>
-                      </div>
-                    </a>
-                    <ul
-                      class="dropdown-menu dropdown-menu-dark text-small shadow bg-dark-3 display-8">
-                      <li>
-                        <a class="dropdown-item" href="#">New project...</a>
-                      </li>
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li>
-                        <a id="btn-logout" class="dropdown-item" href="#"
-                          >Sign out</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
+          </div>
+          <div
+            class="offcanvas offcanvas-start show bg-dark-2"
+            data-bs-scroll="true"
+            data-bs-backdrop="false"
+            tabindex="-1"
+            id="off-navbar-right"
+            aria-labelledby="off-navbar-rightLabel">
+            <div class="offcanvas-header">
+              <div class="offcanvas-title" id="off-navbar-rightLabel">
+                <div class="dropdown-center p-3">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-white text-decoration-none dropdown-toggle fw-8"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img
+                      id="user-img"
+                      src="https://github.com/mdo.png"
+                      alt="User Profile Image"
+                      width="48"
+                      height="48"
+                      class="rounded-circle me-3" />
+                    <div class="d-flex flex-column">
+                      <strong id="user-name" class="display-7 mb-1"
+                        >John Smith</strong
+                      >
+                      <small class="d-flex align-items-center">
+                        <p id="user-email" class="display-9 m-0 p-0 pe-1">
+                          john.smith@example.com
+                        </p>
+                        <span>▼</span>
+                      </small>
+                    </div>
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark text-small shadow bg-dark-3 display-8">
+                    <li>
+                      <a class="dropdown-item" href="#">New project...</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a id="btn-logout" class="dropdown-item" href="#"
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
                 </div>
-                <button
-                  id="btn-hamburger-flip"
-                  type="button"
-                  class="btn btn-secondary bg-transparent text-white"
-                  data-bs-dismiss="off-navbar-right"
-                  aria-label="Close">
-                  <i class="bi bi-list display-5"></i>
-                </button>
               </div>
-              <div class="offcanvas-body d-flex flex-column">
-                <form class="d-flex input-group mb-3" role="search">
-                  <input
-                    id="sidebar-left-search"
-                    type="text"
-                    class="form-control input-search"
-                    placeholder="Search..."
-                    aria-label="Search"
-                    aria-describedby="basic-search" />
-                  <span class="input-group-text btn-search" id="basic-addon1"
-                    ><i class="bi bi-search"></i
-                  ></span>
-                </form>
-                <ul
-                  class="nav nav-pills nav-flush flex-column mb-auto text-center mt-5 mb-2">
-                  <li class="nav-item">
-                    <button
-                      class="btn btn-hover-3 text-start"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#off-money-tracker"
-                      aria-controls="off-money-tracker">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="#9ad2ba"
-                        class="bi bi-piggy-bank ms-2"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z" />
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z" />
-                      </svg>
-                      <small class="text-white ms-2 fs-7">Money Track</small>
-                    </button>
-                  </li>
-                  <li class="nav-item">
-                    <button
-                      class="btn btn-hover-3 text-start"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#off-tasks"
-                      aria-controls="off-tasks">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="#a0cbf1"
-                        class="bi bi-check ms-2"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
-                      </svg>
-                      <small class="text-white ms-2 fs-7">Tasks</small>
-                    </button>
-                  </li>
-                  <li class="mb-2">
-                    <button
-                      class="btn btn-hover-3 text-start"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#off-shopping"
-                      aria-controls="off-shopping">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="#f5b6c2"
-                        class="bi bi-cart2 ms-2"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                      </svg>
-                      <small class="text-white ms-2 fs-7">Shopping List</small>
-                    </button>
-                  </li>
-                  <li class="mb-2">
-                    <button
-                      class="btn btn-hover-3 text-start"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#off-code"
-                      aria-controls="off-code">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="#e46b67"
-                        class="bi bi-code-slash ms-2"
-                        viewBox="0 0 16 16">
-                        <path
-                          d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
-                      </svg>
-                      <small class="text-white ms-2 fs-7">Codes</small>
-                    </button>
-                  </li>
-                </ul>
-                <div class="d-flex flex-column">
-                  <div class="dropdown-center drop-top">
-                    <a
-                      href="#"
-                      class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle text-pink"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      <img
-                        class="navbar__logo me-2"
-                        src="https://res.cloudinary.com/ferjen/image/upload/v1674189340/moneyHackey/img/favicon/mh-logo-outlined-pastel_yfwsmd.svg"
-                        alt="Money Hackey App Logo" />
-                      Money Trackey
-                    </a>
-                    <ul
-                      class="dropdown-menu dropdown-menu-dark text-small shadow bg-dark-3 display-8">
-                      <li>
-                        <a class="dropdown-item" href="#">New project...</a>
-                      </li>
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-                      <li><a class="dropdown-item" href="#">Profile</a></li>
-                      <li><hr class="dropdown-divider" /></li>
-                      <li>
-                        <a id="btn-logout" class="dropdown-item" href="#"
-                          >Sign out</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
+              <button
+                type="button"
+                class="btn btn-close-fun"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close">
+                <i class="bi bi-x-lg display-7"></i>
+              </button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column">
+              <form class="d-flex input-group mb-3" role="search">
+                <input
+                  id="sidebar-left-search"
+                  type="text"
+                  class="form-control input-search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                  aria-describedby="basic-search" />
+                <span class="input-group-text btn-search" id="basic-addon1"
+                  ><i class="bi bi-search"></i
+                ></span>
+              </form>
+              <ul
+                class="nav nav-pills nav-flush flex-column mb-auto text-center mt-5 mb-2">
+                <li id="nav-item-off-money" class="nav-item">
+                  <button
+                    class="btn btn-hover-3 text-start"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#off-money-tracker"
+                    aria-controls="off-money-tracker">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#9ad2ba"
+                      class="bi bi-piggy-bank ms-2"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z" />
+                    </svg>
+                    <small class="text-white ms-2 fs-7">Money Track</small>
+                  </button>
+                </li>
+                <li id="nav-item-off-tasks" class="nav-item">
+                  <button
+                    class="btn btn-hover-3 text-start"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#off-tasks"
+                    aria-controls="off-tasks">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#a0cbf1"
+                      class="bi bi-check ms-2"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
+                    </svg>
+                    <small class="text-white ms-2 fs-7">Tasks</small>
+                  </button>
+                </li>
+                <li class="mb-2">
+                  <button
+                    class="btn btn-hover-3 text-start"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#off-shopping"
+                    aria-controls="off-shopping">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#f5b6c2"
+                      class="bi bi-cart2 ms-2"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                    </svg>
+                    <small class="text-white ms-2 fs-7">Shopping List</small>
+                  </button>
+                </li>
+                <li class="mb-2">
+                  <button
+                    class="btn btn-hover-3 text-start"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#off-code"
+                    aria-controls="off-code">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="#e46b67"
+                      class="bi bi-code-slash ms-2"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z" />
+                    </svg>
+                    <small class="text-white ms-2 fs-7">Codes</small>
+                  </button>
+                </li>
+              </ul>
+              <div class="d-flex flex-column">
+                <div class="dropdown-center drop-top">
+                  <a
+                    href="#"
+                    class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle text-pink"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <img
+                      class="navbar__logo me-2"
+                      src="https://res.cloudinary.com/ferjen/image/upload/v1674189340/moneyHackey/img/favicon/mh-logo-outlined-pastel_yfwsmd.svg"
+                      alt="Money Hackey App Logo" />
+                    Money Trackey
+                  </a>
+                  <ul
+                    class="dropdown-menu dropdown-menu-dark text-small shadow bg-dark-3 display-8">
+                    <li>
+                      <a class="dropdown-item" href="#">New project...</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a id="btn-logout" class="dropdown-item" href="#"
+                        >Sign out</a
+                      >
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </nav>
 
-        <section id="container-app" class="container-fluid">
+        <!-- SECTION APPS -->
+        <section id="container-app" class="container-fluid m-0 p-0">
           <!-- MAIN 😀 MONEY TRACKEY-->
-          <article class="p-5 bg-dark text-white d-none">
+          <article id="money-app" class="d-none m-0 p-0 bg-dark text-white">
             <!-- FIRST ROW - BALANCE -->
             <div
               class="d-flex flex-column text-white align-items-center justify-content-between d-md-none">
@@ -537,11 +535,9 @@
               <h2 class="fs-2 pe-2 balance__value">$1</h2>
             </div>
             <!-- SECOND ROW - MOVEMENTS -->
-            <div id="movements-app">
+            <div>
               <!--<div class="container-movement">-->
-              <ul
-                id="movements-list"
-                class="list-group bg-dark text-white"></ul>
+              <ul id="money-list" class="list-group bg-dark text-white"></ul>
             </div>
 
             <!-- THIRD ROW - STATS -->
@@ -554,10 +550,10 @@
           </article>
 
           <!-- MAIN 😀 TASK APP -->
-          <article id="task-app" class="container-fluid">
-            <div class="p-5 bg-dark text-white">
+          <article id="task-app" class="container-fluid m-0 p-0">
+            <div class="pt-5 px-2 bg-dark text-white">
               <h3 class="text-info">Task</h3>
-              <div id="task-app">
+              <div>
                 <!--<div class="container-movement">-->
                 <ul id="tasks-list" class="list-group bg-dark text-white">
                   <li
@@ -569,7 +565,12 @@
                   </li>
                 </ul>
                 <div class="d-flex justify-content-center">
-                  <button class="border-0 display-4 bg-transparent text-info">
+                  <button
+                    class="border-0 display-3 bg-transparent text-info"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#off-tasks"
+                    aria-controls="off-tasks">
                     <i class="bi bi-plus-circle-fill"></i>
                   </button>
                 </div>

@@ -8,7 +8,7 @@ import { db, updateUI } from './js/firebase/dbConfig';
 const displayMovements = (movements) => {
   console.log(movements);
 
-  domEl.movementsList.innerHTML = '';
+  domEl.moneyList.innerHTML = '';
 
   movements.forEach((movement) => {
     let mov;
@@ -25,7 +25,7 @@ const displayMovements = (movements) => {
       </li>
     `;
 
-    domEl.movementsList.insertAdjacentHTML('afterbegin', movementsHtml);
+    domEl.moneyList.insertAdjacentHTML('afterbegin', movementsHtml);
   });
 };
 
@@ -108,4 +108,24 @@ const movementsToUsd = (movements, exchangeRate) => {
 };
 
 /////////////////////////////////////////////////////////////////////
+//* DOM UI INTERACTIONS
+
 //* TASKS
+
+const showTasks = (e) => {
+  domEl.moneyApp.classList.remove('show');
+  domEl.moneyApp.classList.add('d-none');
+  domEl.tasksApp.classList.remove('d-none');
+  domEl.tasksApp.classList.add('show');
+};
+
+domEl.btnOffTasksListItem.addEventListener('click', showTasks);
+
+const showMoney = (e) => {
+  domEl.moneyApp.classList.remove('d-none');
+  domEl.moneyApp.classList.add('show');
+  domEl.tasksApp.classList.remove('show');
+  domEl.tasksApp.classList.add('d-none');
+};
+
+domEl.btnOffmoneyListItem.addEventListener('click', showMoney);

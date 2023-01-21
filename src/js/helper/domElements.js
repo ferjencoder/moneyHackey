@@ -16,8 +16,12 @@ export const labelBalance = document.querySelectorAll('.balance__value');
 
 export const loginApp = document.querySelector('#login-app');
 export const containerApp = document.querySelector('#container-app');
-export const movementsApp = document.querySelector('#movements-app');
-export const movementsList = document.querySelector('#movements-list');
+export const moneyApp = document.querySelector('#money-app');
+export const moneyList = document.querySelector('#money-list');
+
+//* TASKS
+export const tasksApp = document.getElementById('task-app');
+export const tasksList = document.getElementById('tasks-list');
 
 export const ulMovementDate = document.getElementById('date');
 export const ulMovementCategory = document.getElementById('category');
@@ -69,3 +73,10 @@ export const inputIncomeComment = document.querySelector(
   '.income__input--comment'
 );
 export const btnIncome = document.querySelector('.btn-income');
+
+//* NAV ITEMS - DOM
+export const btnOffTasksListItem =
+  document.getElementById('nav-item-off-tasks');
+
+export const btnOffmoneyListItem =
+  document.getElementById('nav-item-off-money');

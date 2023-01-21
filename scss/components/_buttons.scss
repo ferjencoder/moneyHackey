@@ -23,6 +23,14 @@
   &:hover {
     background-color: #333;
     border: 1px solid transparent;
+  }
+
+  &:active {
+    border: 1px solid transparent;
+  }
+
+  &:focus {
+    border: 1px solid transparent;
 
   }
 }
@@ -33,11 +41,12 @@
 }
 
 
-#btn-hamburger-flip {
-  transition: transform .25s, opacity .25s;
+.btn-close-fun {
+  color: rgb(219, 219, 219);
+  background-color: transparent;
+  transition: 0.2s all linear;
 
   &:hover {
-    color: red;
     transform: rotate(90deg);
   }
 }

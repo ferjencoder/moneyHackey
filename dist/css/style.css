@@ -11594,17 +11594,24 @@ textarea.form-control-lg {
   background-color: #333;
   border: 1px solid transparent;
 }
+.btn-hover-3:active {
+  border: 1px solid transparent;
+}
+.btn-hover-3:focus {
+  border: 1px solid transparent;
+}
 
 .btn-border-3 {
   border-radius: 0;
   border-bottom: 1px solid rgb(100, 100, 100);
 }
 
-#btn-hamburger-flip {
-  transition: transform 0.25s, opacity 0.25s;
+.btn-close-fun {
+  color: rgb(219, 219, 219);
+  background-color: transparent;
+  transition: 0.2s all linear;
 }
-#btn-hamburger-flip:hover {
-  color: red;
+.btn-close-fun:hover {
   transform: rotate(90deg);
 }
 
