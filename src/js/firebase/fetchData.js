@@ -38,30 +38,3 @@ export const fetchMovements = async (activeUser) => {
   displayMoneyTrack(movements);
   return movements;
 };
-
-//export const fetchUsers = async (activeUser) => {
-//  console.log(activeUser);
-//
-//  const q = collection(db, `users`);
-//
-//  //q.length < 3 ? collection(db, `accounts/${activeAccount}`) : '';
-//
-//  const querySnapshot = await getDoc(q);
-//
-//  console.log(q);
-//
-//  let users = [];
-//  querySnapshot.forEach((doc) => {
-//    users.push(doc.data());
-//  });
-//  //updateUI();
-//  //return users;
-//};
-//
-//fetchUsers(activeUser);
-
-//export const updateUI = async (activeAccount) => {
-//  await fetchMovements(activeAccount)
-//    .then(displayMovements(movements))
-//    .then(balanceTotal(movements));
-//};

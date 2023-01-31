@@ -1,16 +1,3 @@
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  onAuthStateChanged,
-} from 'firebase/auth';
-import { doc, updateDoc } from 'firebase/firestore';
-import { app } from '../firebase/dbConfig';
-import { btnLogin } from './domElements';
-
-//import {db} from './fetchData';
-
 export const onFormSubmit = ({ target }) => {
   event.preventDefault();
   const newMovement = {

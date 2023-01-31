@@ -1,6 +1,5 @@
 import * as domEl from './js/helper/domElements';
 import { precioARS } from './js/helper/helperFunctions';
-import { db, updateUI } from './js/firebase/dbConfig';
 
 /////////////////////////////////////////////////////////////////////
 //* MOVEMENTS
@@ -15,13 +14,13 @@ const displayMovements = (movements) => {
     movement.money > 0 ? (mov = 'possitive') : (mov = 'negative');
 
     const movementsHtml = `
-      <li class="list-group-item list-group-item-action list-item-money py-3 mb-1 rounded-1 d-flex flex-fill display-8">
+      <li class="list-group-item list-group-item-action list-item-money py-3 mb-1 rounded-1 d-flex display-8">
         <a href="#" class="mx-2 text-center" >${movement.date}</a>
         <a href="#" class="mx-2 text-center ${mov}" >${movement.money}</a>
         <a href="#" class="mx-2 text-center" >${movement.currency}</a>
-        <a href="#" class="mx-2 text-center" >${movement.category}</a>
-        <a href="#" class="mx-2 text-center" >${movement.place}</a>
-        <a href="#" class="mx-2 text-center" >${movement.comment}</a>
+        <a href="#" class="mx-2 text-center d-none d-lg-block" >${movement.category}</a>
+        <a href="#" class="mx-2 text-center d-none d-lg-block" >${movement.place}</a>
+        <a href="#" class="mx-2 text-center d-none d-lg-block" >${movement.comment}</a>
       </li>
     `;
 
@@ -107,10 +106,35 @@ const movementsToUsd = (movements, exchangeRate) => {
   return movementToUsdBlue;
 };
 
-/////////////////////////////////////////////////////////////////////
-//* DOM UI INTERACTIONS
-
+//*///////////////////////////////////////////////////////////////////
 //* TASKS
+
+const displayTasks = (tasks) => {
+  console.log(tasks);
+
+  domEl.moneyList.innerHTML = '';
+
+  tasks.forEach((task) => {
+    const tasksHtml = `
+      <li class="list-group-item list-group-item-action list-item-money py-3 mb-1 rounded-1 d-flex display-8 justify-content-between text-white">
+        <div>
+          <a href="#" class="mx-2 text-center" >${task.date}</a>
+          <a href="#" class="mx-2 text-center" >${task.currency}</a>>
+        </div>
+        <div>
+          <button class="bg-dark-3 text-white border-0 display-7">
+            <i class="bi bi-trash3-fill"></i>
+          </button>     
+        </div>
+      </li>
+    `;
+
+    domEl.moneyList.insertAdjacentHTML('afterbegin', tasksHtml);
+  });
+};
+
+//*///////////////////////////////////////////////////////////////////
+//* DOM UI INTERACTIONS
 
 const showTasks = (e) => {
   domEl.moneyApp.classList.remove('show');

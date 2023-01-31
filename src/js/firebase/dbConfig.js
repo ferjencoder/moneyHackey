@@ -6,7 +6,6 @@ import {
   doc,
   setDoc,
   getDoc,
-  onSnapShot,
 } from 'firebase/firestore';
 import * as domEl from '../helper/domElements';
 import {
@@ -15,24 +14,9 @@ import {
   onAuthStateChanged,
   signInWithPopup,
   signOut,
-  getFirebase,
-  browserSessionPersistence,
 } from 'firebase/auth';
 import { fetchMovements } from './fetchData';
 import { createDate } from '../helper/helperFunctions';
-
-//const API_KEY_NAME = process.env.API_KEY_NAME;
-//const API_KEY_VALUE = process.env.API_KEY_VALUE;
-//const APP_ID_NAME = process.env.APP_ID_NAME;
-//const APP_ID_VALUE = process.env.APP_ID_VALUE;
-//const AUTH_DOMAIN_NAME = process.env.AUTH_DOMAIN_NAME;
-//const AUTH_DOMAIN_VALUE = process.env.AUTH_DOMAIN_VALUE;
-//const MESSAGING_SENDER_ID_NAME = process.env.MESSAGING_SENDER_ID_NAME;
-//const MESSAGING_SENDER_ID_VALUE = process.env.MESSAGING_SENDER_ID_VALUE;
-//const PROJECT_ID_NAME = process.env.PROJECT_ID_NAME;
-//const PROJECT_ID_VALUE = process.env.PROJECT_ID_VALUE;
-//const STORAGE_BUCKET_NAME = process.env.STORAGE_BUCKET_NAME;
-//const STORAGE_BUCKET_VALUE = process.env.STORAGE_BUCKET_VALUE;
 
 const firebaseConfig = {
   apiKey: 'AIzaSyC_I1gFkQz6_uBJ9QdBBrriUiYabbi3fG4',
@@ -105,18 +89,6 @@ const checkIfUser = async (
       uid: activeUser,
     });
   }
-
-  //onAuthStateChanged(auth, (user) => {
-  //  if (user != null) {
-  //    userData(activeUser, userEmail, userDisplayName, userPhotoURL);
-  //    domEl.loginApp.classList.add('d-none');
-  //    domEl.containerApp.classList.remove('d-none');
-  //    showMoneyTrack(activeUser);
-  //  } else {
-  //    domEl.loginApp.classList.remove('d-none');
-  //    domEl.containerApp.classList.add('d-none');
-  //  }
-  //});
 };
 
 const googleSignIn = async () => {

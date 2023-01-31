@@ -1,6 +1,3 @@
-import { AuthErrorCodes } from 'firebase/auth';
-import { passwordInpValidation } from './domElements';
-
 export const precioARS = function (precio) {
   // PASS ANY NUMBER
   let precioToFormat = precio;

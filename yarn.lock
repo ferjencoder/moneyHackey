@@ -5041,7 +5041,6 @@ __metadata:
     mkdirp: ^1.0.4
     requizzle: ^0.2.3
     strip-json-comments: ^3.1.0
-    taffydb: 2.6.2
     underscore: ~1.13.2
   bin:
     jsdoc: jsdoc.js
@@ -7738,13 +7737,6 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
-  languageName: node
-  linkType: hard
-
-"taffydb@npm:2.6.2":
-  version: 2.6.2
-  resolution: "taffydb@npm:2.6.2"
-  checksum: 8fea9cdff71735a40320c4beeb80cb98837076cb89614bc55ac5d67561f35ebae158cfc07a193a1099b5e32746433b2c086b0cd6d56f29aa7c7678e74968335b
   languageName: node
   linkType: hard
 
