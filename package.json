@@ -32,11 +32,12 @@
     "autoprefixer": "^10.4.13",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
-    "firebase": "^9.15.0",
+    "firebase": "9.18.0",
     "firebase-tools": "^11.20.0",
     "got": "^12.5.3",
     "jsonwebtoken": "^9.0.0",
     "postcss-cli": "^10.1.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "uuid": "^9.0.0"
   }
 }
